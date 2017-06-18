@@ -39,5 +39,12 @@ export default {
 </script>
 
 <style scoped>
-
+.is-outlined {
+  background-color:transparent;
+  color:#fff;
+}
+.is-outlined:hover {
+    border-color: darkcyan;
+    color: #fff
+}
 </style>
