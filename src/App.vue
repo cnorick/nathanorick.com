@@ -1,24 +1,25 @@
 <template>
   <div id="app">
-    <intro></intro>
+    <hero></hero>
     <copyright></copyright>
   </div>
 </template>
 
 <script>
-import Intro from './components/Intro'
+import Hero from './components/Hero/Hero'
 import Copyright from './components/Copyright'
 
 export default {
   name: 'app',
   components: {
-    Intro,
+    Hero,
     Copyright
   }
 }
 </script>
 
 <style>
+@import "~bulma";
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

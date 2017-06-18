@@ -1,0 +1,43 @@
+<template>
+<section class="hero is-primary is-large header-image">
+    <hero-head></hero-head>
+    <hero-body></hero-body>
+  </section>
+</template>
+
+<script>
+import 'vue-awesome/icons/linkedin'
+import 'vue-awesome/icons/github'
+import HeroHead from './HeroHead'
+import HeroBody from './HeroBody'
+
+export default {
+  name: 'Hero',
+  components: {
+    HeroHead,
+    HeroBody
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang="scss">
+.header-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.49),rgba(0, 0, 0, 0.89)),url('https://images.unsplash.com/1/iphone-4-closeup.jpg?dpr=1&auto=format&crop=middle&fit=crop&w=2000&h=700&q=80');
+}
+.is-outlined {
+  background-color:transparent;
+  color:#fff;
+}
+.hero-cta {
+  padding: 30px 0;
+}
+.panel-block.section p {
+  font-size: 17px;
+  line-height: 1.4;
+  color:#95A5A6;
+}
+.icon-block {
+  font-size:5em;
+}
+</style>

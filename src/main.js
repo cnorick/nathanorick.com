@@ -3,9 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import Icon from 'vue-awesome/components/Icon'
+import 'bulma'
 
 Vue.component('icon', Icon)
-require('../node_modules/bootstrap/less/bootstrap.less')
 
 Vue.config.productionTip = false
 
