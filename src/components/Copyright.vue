@@ -1,10 +1,8 @@
 <template>
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="copyright text-muted small">&copy; 2017 Nathan Orick</p>
-                </div>
+            <div class="content has-text-centered">
+                <p class="copyright">&copy; 2017 Nathan Orick</p>
             </div>
         </div>
     </footer>
@@ -17,8 +15,16 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped, lang="scss">
+@import "~bulma/sass/utilities/variables";
+@import "~bulma/sass/utilities/functions";
+
+$backgroundColor: $white;
+
+footer.footer {
+    background-color: $backgroundColor;
+}
 p.copyright {
-    margin: 15px 0 0;
+    color: findColorInvert($backgroundColor)
 }
 </style>

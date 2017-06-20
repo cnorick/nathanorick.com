@@ -24,6 +24,7 @@ export default {
 <style lang="scss">
 .header-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.49),rgba(0, 0, 0, 0.89)),url('https://images.unsplash.com/1/iphone-4-closeup.jpg?dpr=1&auto=format&crop=middle&fit=crop&w=2000&h=700&q=80');
+  background-repeat: no-repeat;
 }
 .hero-cta {
   padding: 30px 0;
