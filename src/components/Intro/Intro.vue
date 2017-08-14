@@ -1,5 +1,6 @@
 <template>
   <div class="intro-container">
+    <div class="background-extention"></div>
     <div class="image-container">
       <div class="head-shot">
         <img src="./nathan.png" />
@@ -47,13 +48,19 @@ export default {
 <style scoped, lang="scss">
 $imageHeight: 128px;
 $backgroundHeight: 200px;
+$backgroundColor: pink;
 
+.background-extention {
+  background-color: $backgroundColor;
+  height: $backgroundHeight - $imageHeight/2;
+  width: 100%;
+  display: block;
+}
 .image-container {
-  background-color: pink;
+  background: linear-gradient(to bottom, $backgroundColor 50%, transparent 50%);
   align-content: center;
   .head-shot {
-    flex: 1;
-        margin: auto;
+    margin: auto;
     width: $imageHeight;
     height: $imageHeight;
     img {
