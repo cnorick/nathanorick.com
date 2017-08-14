@@ -48,36 +48,39 @@ export default {
 <style scoped, lang="scss">
 $imageHeight: 200px;
 $backgroundHeight: 200px;
-$backgroundColor: #4F7CAC;
+$topBackgroundColor: #4F7CAC;
+$bottomBackgroundColor: #fff;
 
-.background-extention {
-  background-color: $backgroundColor;
-  height: $backgroundHeight - $imageHeight/2;
-  width: 100%;
-  display: block;
-}
-.image-container {
-  background: linear-gradient(to bottom, $backgroundColor 50%, transparent 50%);
-  align-content: center;
-  .head-shot {
-    margin: auto;
-    width: $imageHeight;
-    height: $imageHeight;
-    img {
-      border-radius: 50%;
+.intro-container {
+  .background-extention {
+    background-color: $topBackgroundColor;
+    height: $backgroundHeight - $imageHeight/2;
+    width: 100%;
+    display: block;
+  }
+  .image-container {
+    background: linear-gradient(to bottom, $topBackgroundColor 50%, transparent 50%);
+    align-content: center;
+    .head-shot {
+      margin: auto;
       width: $imageHeight;
       height: $imageHeight;
+      img {
+        border-radius: 50%;
+        width: $imageHeight;
+        height: $imageHeight;
+      }
     }
   }
 }
 
 .is-outlined {
   background-color: transparent;
-  color: #fff;
+  color: findColorInvert($bottomBackgroundColor);
 }
 
 .is-outlined:hover {
-  border-color: darkcyan;
-  color: #fff
+  border-color: $topBackgroundColor;
+  color: findColorInvert($bottomBackgroundColor);
 }
 </style>
