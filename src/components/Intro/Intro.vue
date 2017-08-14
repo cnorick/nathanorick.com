@@ -3,7 +3,7 @@
     <div class="background-extention"></div>
     <div class="image-container">
       <div class="head-shot">
-        <img src="./nathan.png" />
+        <img src="./nathan.jpg" />
       </div>
     </div>
     <div class="container has-text-centered">
