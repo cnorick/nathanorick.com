@@ -48,7 +48,7 @@ export default {
 <style scoped, lang="scss">
 $imageHeight: 200px;
 $backgroundHeight: 200px;
-$backgroundColor: pink;
+$backgroundColor: #4F7CAC;
 
 .background-extention {
   background-color: $backgroundColor;
