@@ -46,7 +46,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped, lang="scss">
-$imageHeight: 128px;
+$imageHeight: 200px;
 $backgroundHeight: 200px;
 $backgroundColor: pink;
 
@@ -64,7 +64,7 @@ $backgroundColor: pink;
     width: $imageHeight;
     height: $imageHeight;
     img {
-      // top: -$imageHeight/2;
+      border-radius: 50%;
       width: $imageHeight;
       height: $imageHeight;
     }
