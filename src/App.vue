@@ -1,22 +1,29 @@
 <template>
   <div id="app">
-    <hero></hero>
-    <copyright></copyright>
+    <div class="header-image">
+      <intro></intro>
+      <copyright></copyright>
+    </div>
   </div>
 </template>
 
 <script>
-import Hero from './components/Hero/Hero'
 import Copyright from './components/Copyright'
+import Intro from './components/Intro/Intro'
 
 export default {
   name: 'app',
   components: {
-    Hero,
-    Copyright
+    Copyright,
+    Intro
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+.header-image {
+  // background-image: linear-gradient(#0B486B,#F56217);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 </style>
