@@ -1,7 +1,11 @@
 <template>
   <div class="intro-container">
+    <div class="image-container">
+      <div class="head-shot">
+        <img src="./nathan.png" />
+      </div>
+    </div>
     <div class="container has-text-centered">
-      <img src="./nathan.png"/>
       <h1 class="title is-2">
         Nathan Orick
       </h1>
@@ -41,9 +45,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped, lang="scss">
-.intro-container {
-  background: linear-gradient(to bottom, lightblue 50%, transparent 50%);
+$imageHeight: 128px;
+$backgroundHeight: 200px;
+
+.image-container {
+  background-color: pink;
+  align-content: center;
+  .head-shot {
+    flex: 1;
+        margin: auto;
+    width: $imageHeight;
+    height: $imageHeight;
+    img {
+      // top: -$imageHeight/2;
+      width: $imageHeight;
+      height: $imageHeight;
+    }
+  }
 }
+
 .is-outlined {
   background-color: transparent;
   color: #fff;
