@@ -19,10 +19,10 @@ export default {
 @import "~bulma/sass/utilities/variables";
 @import "~bulma/sass/utilities/functions";
 
-$backgroundColor: $white;
+$backgroundColor: white;
 
 footer.footer {
-    background-color: $backgroundColor;
+    // background-color: $backgroundColor;
 }
 p.copyright {
     color: findColorInvert($backgroundColor)

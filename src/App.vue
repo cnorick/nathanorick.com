@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <div class="header-image">
-      <intro></intro>
+    <div>
+      <intro class="intro"></intro>
       <copyright></copyright>
     </div>
   </div>
 </template>
 
 <script>
-import Copyright from './components/Copyright'
+import Copyright from './components/Copyright/Copyright'
 import Intro from './components/Intro/Intro'
 
 export default {
@@ -21,9 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-.header-image {
-  // background-image: linear-gradient(#0B486B,#F56217);
-  background-size: cover;
-  background-repeat: no-repeat;
+.intro {
+  padding-bottom: 40px;
 }
 </style>
