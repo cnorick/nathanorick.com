@@ -3,7 +3,7 @@
     <div class="background-extention"></div>
     <div class="image-container">
       <div class="head-shot">
-        <img src="./nathan.jpg" alt="Picture of Nathan in a pink bowtie"/>
+        <img src="./nathan.jpg" alt="Picture of Nathan in a pink bowtie" />
       </div>
     </div>
     <div class="container has-text-centered">
@@ -46,12 +46,15 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped, lang="scss">
+@import '~bulma/sass/utilities/functions';
+
 $imageHeight: 200px;
 $backgroundHeight: 200px;
 $topBackgroundColor: #4F7CAC;
 $bottomBackgroundColor: #fff;
 
 .intro-container {
+  background-color: $bottomBackgroundColor;
   .background-extention {
     background-color: $topBackgroundColor;
     height: $backgroundHeight - $imageHeight/2;
@@ -71,6 +74,9 @@ $bottomBackgroundColor: #fff;
         height: $imageHeight;
       }
     }
+  }
+  * {
+    color: findColorInvert($bottomBackgroundColor);
   }
 }
 
