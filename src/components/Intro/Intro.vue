@@ -64,6 +64,7 @@ $bottomBackgroundColor: #fff;
   .image-container {
     background: linear-gradient(to bottom, $topBackgroundColor 50%, transparent 50%);
     align-content: center;
+    margin-top: -1px; // Overlap to avoid rounding errors in height calculation.
     .head-shot {
       margin: auto;
       width: $imageHeight;
