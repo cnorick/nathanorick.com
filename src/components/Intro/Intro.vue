@@ -86,7 +86,7 @@ $bottomBackgroundColor: #fff;
   color: findColorInvert($bottomBackgroundColor);
 }
 
-.is-outlined:hover {
+a.button.is-outlined:hover {
   border-color: $topBackgroundColor;
   color: findColorInvert($bottomBackgroundColor);
 }
