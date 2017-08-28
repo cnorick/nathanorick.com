@@ -2,6 +2,7 @@
   <div id="app">
     <div>
       <intro class="intro"></intro>
+      <br>
       <bio></bio>
       <copyright></copyright>
     </div>
