@@ -2,6 +2,8 @@
   <div id="app">
     <div>
       <intro class="intro"></intro>
+      <br>
+      <bio></bio>
       <copyright></copyright>
     </div>
   </div>
@@ -10,12 +12,14 @@
 <script>
 import Copyright from './components/Copyright/Copyright'
 import Intro from './components/Intro/Intro'
+import Bio from './components/Bio/Bio'
 
 export default {
   name: 'app',
   components: {
     Copyright,
-    Intro
+    Intro,
+    Bio
   }
 }
 </script>
