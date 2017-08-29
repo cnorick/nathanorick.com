@@ -9,7 +9,9 @@
               <h3 class="title is-3">{{e.title}}</h3>
               <h4 class="subtitle is-5">{{e.subtitle}}</h4>
             </div>
-            <div class="date column is-one-third is-offset-one-third"><span>{{e.startDate}}-{{e.endDate}}</span></div>
+            <div class="date column is-one-third is-offset-one-third">
+              <span>{{e.startDate}}-{{e.endDate}}</span>
+            </div>
           </div>
           <hr>
           <div v-for="(p, i) in e.paragraphs">
@@ -30,7 +32,7 @@ export default {
   name: 'experience',
   components: {
   },
-  data () {
+  data: () => {
     return {
       experiences: [
         {
@@ -67,13 +69,11 @@ export default {
   .project {
     .header {
       margin-bottom: 20px;
-      .experience-title {
-      }
       .date {
         display: flex;
         flex-direction: column;
         span {
-          @media screen and (min-width: $tablet){
+          @media screen and (min-width: $tablet) {
             align-self: flex-end;
           }
         }
