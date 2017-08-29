@@ -12,7 +12,7 @@
           </p>
           <p class="bio-paragraph">I recently finished four terms as a software development intern at
             <a href="http://www.osisoft.com/">OSIsoft, LLC</a>. I worked three semesters in the Johnson City, TN office, and one semester at OSIsoft's HQ in San Leandro, CA.
-            <!-- Check out what I worked on there below in the <a>projects</a> section -->
+            Check out what I worked on while at OSIsoft <a href="#OSI">below</a> in the Experience section.
           </p>
           <p class="bio-paragraph">I love programming, and I'm really excited work in software development professionally after graduation! I can't wait to put my skills and knowledge to good use on projects that will change the world.</p>
         </div>
