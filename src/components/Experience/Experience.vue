@@ -61,6 +61,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "~bulma/sass/utilities/initial-variables";
+
 .experience {
   .project {
     .header {
@@ -68,6 +70,13 @@ export default {
       .experience-title {
       }
       .date {
+        display: flex;
+        flex-direction: column;
+        span {
+          @media screen and (min-width: $tablet){
+            align-self: flex-end;
+          }
+        }
       }
     }
   }
