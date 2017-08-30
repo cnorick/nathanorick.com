@@ -15,6 +15,7 @@
 import Copyright from './components/Copyright/Copyright'
 import Intro from './components/Intro/Intro'
 import Bio from './components/Bio/Bio'
+import Vue from 'vue'
 import Experience from './components/Experience/Experience'
 export default {
   name: 'app',
@@ -23,6 +24,9 @@ export default {
     Intro,
     Bio,
     Experience
+  },
+  mounted: () => {
+    setTimeout(() => { Vue.$ga.page('home') }, 1000)
   }
 }
 </script>
