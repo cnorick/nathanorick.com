@@ -26,8 +26,7 @@ export default {
     Experience
   },
   mounted: () => {
-    Vue.$ga.page('home')
-    Vue.$ga.event('event')
+    setTimeout(() => { Vue.$ga.page('home') }, 1000)
   }
 }
 </script>
