@@ -4,6 +4,8 @@
       <intro class="intro"></intro>
       <br>
       <bio></bio>
+      <br>
+      <experience></experience>
       <copyright></copyright>
     </div>
   </div>
@@ -13,13 +15,14 @@
 import Copyright from './components/Copyright/Copyright'
 import Intro from './components/Intro/Intro'
 import Bio from './components/Bio/Bio'
-
+import Experience from './components/Experience/Experience'
 export default {
   name: 'app',
   components: {
     Copyright,
     Intro,
-    Bio
+    Bio,
+    Experience
   }
 }
 </script>
