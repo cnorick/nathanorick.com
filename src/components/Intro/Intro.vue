@@ -14,7 +14,7 @@
         Developer
       </h2>
       <p>
-        <a class="button is-outlined" href="http://www.github.com/cnorick">
+        <a class="button is-outlined" v-on:click="linkClick('github', 'http://www.github.com/cnorick')">
           <span class="icon">
             <icon name="github"></icon>
           </span>
@@ -22,7 +22,7 @@
             Github
           </span>
         </a>
-        <a class="button is-outlined" href="http://www.linkedin.com/in/nathan-orick">
+        <a class="button is-outlined" v-on:click="linkClick('linkedin', 'http://www.linkedin.com/in/nathan-orick')">
           <span class="icon">
             <icon name="linkedin"></icon>
           </span>
@@ -38,9 +38,20 @@
 <script>
 import 'vue-awesome/icons/github'
 import 'vue-awesome/icons/linkedin'
+import Vue from 'vue'
 
 export default {
-  name: 'intro'
+  name: 'intro',
+  methods: {
+    linkClick: (name, url) => {
+      Vue.$ga.event({
+        eventCategory: 'External Link',
+        eventAction: 'click',
+        eventLabel: name
+      })
+      window.location.href = url
+    }
+  }
 }
 </script>
 
