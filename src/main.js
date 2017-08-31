@@ -11,7 +11,7 @@ Vue.component('icon', Icon)
 Vue.config.productionTip = false
 
 Vue.use(VueAnalytics, {
-  id: 'UA-102148746-1',
+  id: process.env.GA_KEY,
   autoTracking: {
     page: false
   }
