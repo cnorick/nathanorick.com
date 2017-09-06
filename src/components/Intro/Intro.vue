@@ -59,9 +59,10 @@ export default {
 <style scoped, lang="scss">
 @import '~bulma/sass/utilities/functions';
 
-$imageHeight: 200px;
+$imageHeight: 250px;
+$imageWidth: $imageHeight;
 $backgroundHeight: 200px;
-$topBackgroundColor: #4F7CAC;
+$topBackgroundColor: #233344;
 $bottomBackgroundColor: #fff;
 
 .intro-container {
@@ -78,7 +79,7 @@ $bottomBackgroundColor: #fff;
     margin-top: -1px; // Overlap to avoid rounding errors in height calculation.
     .head-shot {
       margin: auto;
-      width: $imageHeight;
+      width: $imageWidth;
       height: $imageHeight;
       img {
         border-radius: 50%;
