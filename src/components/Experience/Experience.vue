@@ -10,15 +10,20 @@
               <h4 class="subtitle is-5">{{e.subtitle}}</h4>
             </div>
             <div class="date column is-one-third is-offset-one-third">
-              <span>{{e.startDate}}-{{e.endDate}}</span>
+              <span>{{e.startDate}}{{e.endDate ? '-': ''}}{{e.endDate}}</span>
             </div>
           </div>
           <hr>
           <div v-for="(p, i) in e.paragraphs">
-            <p class="experience-paragraph">
-              {{p}}
-            </p>
+            <p class="experience-paragraph" v-html="p"></p>
             <br v-if="i != e.paragraphs.length - 1" />
+          </div>
+          <hr v-if="e.links">
+          <div class="links-container columns is-centered">
+            <span v-for="(link, name) in e.links" class="column has-text-centered">
+              <a href="{{link}}">{{name}}</a>
+              <br v-if="i != e.links.length - 1" />
+            </span>
           </div>
         </div>
       </div>
@@ -55,6 +60,26 @@ export default {
             by migrating a large section of existing UI code from Angular 1 to Angular 4, writing UI tests using Jasmine and Angular
             testing tools, and designing/writing new components for the UI.`
           ]
+        },
+        {
+          title: `Random Restaurant`,
+          subtitle: `Amazon Alexa Skill`,
+          id: 'Alexa',
+          startDate: 'Summer 2016',
+          paragraphs: [
+            `Random Restaurant is an Alexa skill that helps users decide what to eat. Often, friends may disagree on what to have
+            for dinner, or if someone is new to an area, they may not know what all of the food options around them are. Users simply
+            say 'Alexa, ask Random Restaurant for a place to eat', and the app will give them a restaurant recommendation that is 
+            nearby and currently open.`,
+
+            `The skill is hosted on AWS as a node.js lambda function. It works by collecting the user's address from the device that makes
+            the request. It then passes that information to the Yelp public API, which returns a list of nearby and open restaurants.
+            From that list, one restaurant is randomly chosen and suggested to the user.`
+          ],
+          links: {
+            'Skill Page': '',
+            'Source Code': 'https://github.com/cnorick/randomRestaurant'
+          }
         }
       ]
     }
