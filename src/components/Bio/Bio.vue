@@ -6,12 +6,12 @@
         <div>
           <p class="bio-paragraph">
             I am a
-            <a v-on:click="linkClick('eecs', 'http://www.eecs.utk.edu/')">Computer Science</a> student at the
-            <a v-on:click="linkClick('utk', 'http://www.utk.edu/')">University of Tennessee, Knoxville</a> minoring in Math, and graduating May 12th, 2018. At UT, I am an ambassador for the
-            <a v-on:click="linkClick('coop', 'http://www.coop.utk.edu/')">Engineering Professional Practice Office</a> where I counsel engineering students in their internship searches.
+            <a ga-event="eecs" href="http://www.eecs.utk.edu/">Computer Science</a> student at the
+            <a ga-event="utk" href="http://www.utk.edu/">University of Tennessee, Knoxville</a> minoring in Math, and graduating May 12th, 2018. At UT, I am an ambassador for the
+            <a ga-event="coop" href="http://www.coop.utk.edu/">Engineering Professional Practice Office</a> where I counsel engineering students in their internship searches.
           </p>
           <p class="bio-paragraph">I recently finished four terms as a software development intern at
-            <a v-on:click="linkClick('osi', 'http://www.osisoft.com/')">OSIsoft, LLC</a>. I worked three semesters in the Johnson City, TN office, and one semester at OSIsoft's HQ in San Leandro, CA.
+            <a ga-event="osi" href="http://www.osisoft.com/">OSIsoft, LLC</a>. I worked three semesters in the Johnson City, TN office, and one semester at OSIsoft's HQ in San Leandro, CA.
             Check out what I worked on while at OSIsoft <a href="#OSI">below</a> in the Experience section.
           </p>
           <p class="bio-paragraph">I love programming, and I'm really excited work in software development professionally after graduation! I can't wait to put my skills and knowledge to good use on projects that will change the world.</p>
@@ -22,20 +22,10 @@
 </template>
 
 <script>
-import Vue from 'vue'
+// import Vue from 'vue'
 
 export default {
-  name: 'bio',
-  methods: {
-    linkClick: (name, url) => {
-      Vue.$ga.event({
-        eventCategory: 'External Link',
-        eventAction: 'click',
-        eventLabel: name
-      })
-      window.location.href = url
-    }
-  }
+  name: 'bio'
 }
 </script>
 

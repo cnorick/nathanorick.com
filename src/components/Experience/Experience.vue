@@ -19,10 +19,9 @@
             <br v-if="i != e.paragraphs.length - 1" />
           </div>
           <hr v-if="e.links">
-          <div class="links-container columns is-centered">
-            <span v-for="(link, name) in e.links" class="column has-text-centered">
-              <a href="{{link}}">{{name}}</a>
-              <br v-if="i != e.links.length - 1" />
+          <div v-if="e.links" class="links-container columns is-centered">
+            <span v-for="l in e.links" class="column has-text-centered">
+              <a :href="l.url" :ga-event="l.event">{{l.name}}</a>
             </span>
           </div>
         </div>
@@ -76,10 +75,18 @@ export default {
             the request. It then passes that information to the Yelp public API, which returns a list of nearby and open restaurants.
             From that list, one restaurant is randomly chosen and suggested to the user.`
           ],
-          links: {
-            'Skill Page': '',
-            'Source Code': 'https://github.com/cnorick/randomRestaurant'
-          }
+          links: [
+            {
+              name: 'Skill Page',
+              url: '',
+              event: 'alexaSkills-randomRestaurant'
+            },
+            {
+              name: 'Source Code',
+              url: 'https://github.com/cnorick/randomRestaurant',
+              event: 'github-randomRestaurant'
+            }
+          ]
         }
       ]
     }
