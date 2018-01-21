@@ -1,6 +1,6 @@
 <template>
   <div class="bio">
-    <h2 class="title is-3 header has-text-centered">About Me</h2>
+    <h2 class="title is-2 header has-text-centered">About Me</h2>
     <div class="columns is-marginless is-centered">
       <div class="column is-half-widescreen is-three-quarters-tablet">
         <div>

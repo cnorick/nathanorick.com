@@ -7,10 +7,10 @@
       </div>
     </div>
     <div class="container has-text-centered">
-      <h1 class="title is-2">
+      <h1 class="title is-1">
         Nathan Orick
       </h1>
-      <h2 class="subtitle is-5">
+      <h2 class="subtitle is-4">
         Developer
       </h2>
       <p>

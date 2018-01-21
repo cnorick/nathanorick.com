@@ -1,33 +1,34 @@
 <template>
   <div class="experience">
-    <h2 class="title is-3 header has-text-centered">Projects</h2>
-    <div class="columns is-marginless is-centered">
-      <div class="column is-half-widescreen is-three-quarters-tablet">
-        <div v-for="e in experiences" :key="e.id" class="box project" v-bind:id="e.id">
-          <div class="header columns">
-            <div class="experience-title column is-one-third">
-              <h3 class="title is-3">{{e.title}}</h3>
-              <h4 class="subtitle is-5">{{e.subtitle}}</h4>
+    <h2 class="title is-2 header has-text-centered">Projects</h2>
+        <div class="columns is-desktop is-5 is-multiline is-marginless is-centered is-variable is-6">
+          <div v-for="e in experiences" v-bind:id="e.id"
+               class="column is-half-desktop project">
+            <div class="box">
+              <div class="header columns">
+                <div class="experience-title column is-two-thirds">
+                  <h3 class="title is-3">{{e.title}}</h3>
+                  <h4 class="subtitle is-5">{{e.subtitle}}</h4>
+                </div>
+                <div class="date column is-one-third">
+                  <span>{{e.startDate}}{{e.endDate ? '-': ''}}{{e.endDate}}</span>
+                </div>
+              </div>
+              <hr>
+              <div v-for="(p, i) in e.paragraphs">
+                <p class="experience-paragraph" v-html="p"></p>
+                <br v-if="i != e.paragraphs.length - 1" />
+              </div>
+              <hr v-if="e.links" class="links-divider">
+              <div class="links-container">
+                <div v-if="e.links" class="columns is-centered">
+                  <br>
+                  <span v-for="l in e.links" class="column has-text-centered">
+                    <a :href="l.url" :ga-event="l.event">{{l.name}}</a>
+                  </span>
+                </div>
+              </div>
             </div>
-            <div class="date column is-one-third is-offset-one-third">
-              <span>{{e.startDate}}{{e.endDate ? '-': ''}}{{e.endDate}}</span>
-            </div>
-          </div>
-          <hr>
-          <div v-for="(p, i) in e.paragraphs">
-            <p class="experience-paragraph" v-html="p"></p>
-            <br v-if="i != e.paragraphs.length - 1" />
-          </div>
-          <hr v-if="e.links" class="links-divider">
-          <div class="links-container">
-            <div v-if="e.links" class="columns is-centered">
-              <br>
-              <span v-for="l in e.links" class="column has-text-centered">
-                <a :href="l.url" :ga-event="l.event">{{l.name}}</a>
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -91,6 +92,93 @@ export default {
               event: 'github-randomRestaurant'
             }
           ]
+        },
+        {
+          title: `Random Restaurant`,
+          subtitle: `Amazon Alexa Skill`,
+          id: 'Alexa',
+          startDate: null,
+          paragraphs: [
+            `Random Restaurant is an Alexa skill that helps users decide what to eat. Often, friends may disagree on what to have
+            for dinner, or if someone is new to an area, they may not know what all of the food options around them are. Users can
+            simply say <i>Alexa, ask Random Restaurant for a place to eat</i>, and the app will give them a restaurant recommendation
+            that is nearby and currently open.`,
+
+            `The skill is hosted on AWS as a node.js lambda function. It works by collecting the user's address from the device that makes
+            the request. It then passes that information to the Yelp public API, which returns a list of nearby and open restaurants.
+            From that list, one restaurant is randomly chosen and suggested to the user. Users can also request a specific type of food or
+            limit the price range of the suggested restaurant.`
+          ],
+          links: [
+            {
+              name: 'Enable the Skill',
+              url: 'https://www.amazon.com/Nathan-Orick-Random-Restaurant/dp/B0739K8V4N/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1505581691&sr=1-1&keywords=random+restaurant',
+              event: 'alexaSkills-randomRestaurant'
+            },
+            {
+              name: 'Source',
+              url: 'https://github.com/cnorick/randomRestaurant',
+              event: 'github-randomRestaurant'
+            }
+          ]
+        },
+        {
+          title: `Random Restaurant`,
+          subtitle: `Amazon Alexa Skill`,
+          id: 'Alexa',
+          startDate: null,
+          paragraphs: [
+            `Random Restaurant is an Alexa skill that helps users decide what to eat. Often, friends may disagree on what to have
+            for dinner, or if someone is new to an area, they may not know what all of the food options around them are. Users can
+            simply say <i>Alexa, ask Random Restaurant for a place to eat</i>, and the app will give them a restaurant recommendation
+            that is nearby and currently open.`,
+
+            `The skill is hosted on AWS as a node.js lambda function. It works by collecting the user's address from the device that makes
+            the request. It then passes that information to the Yelp public API, which returns a list of nearby and open restaurants.
+            From that list, one restaurant is randomly chosen and suggested to the user. Users can also request a specific type of food or
+            limit the price range of the suggested restaurant.`
+          ],
+          links: [
+            {
+              name: 'Enable the Skill',
+              url: 'https://www.amazon.com/Nathan-Orick-Random-Restaurant/dp/B0739K8V4N/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1505581691&sr=1-1&keywords=random+restaurant',
+              event: 'alexaSkills-randomRestaurant'
+            },
+            {
+              name: 'Source',
+              url: 'https://github.com/cnorick/randomRestaurant',
+              event: 'github-randomRestaurant'
+            }
+          ]
+        },
+        {
+          title: `Random Restaurant Hello World woo`,
+          subtitle: `Amazon Alexa Skill`,
+          id: 'Alexa',
+          startDate: null,
+          paragraphs: [
+            `Random Restaurant is an Alexa skill that helps users decide what to eat. Often, friends may disagree on what to have
+            for dinner, or if someone is new to an area, they may not know what all of the food options around them are. Users can
+            simply say <i>Alexa, ask Random Restaurant for a place to eat</i>, and the app will give them a restaurant recommendation
+            that is nearby and currently open.`,
+
+            `The skill is hosted on AWS as a node.js lambda function. It works by collecting the user's address from the device that makes
+            the request. It then passes that information to the Yelp public API, which returns a list of nearby and open restaurants.
+            From that list, one restaurant is randomly chosen and suggested to the user. Users can also request a specific type of food or
+            limit the price range of the suggested restaurant.`
+          ],
+          links: [
+            {
+              name: 'Enable the Skill',
+              url: 'https://www.amazon.com/Nathan-Orick-Random-Restaurant/dp/B0739K8V4N/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1505581691&sr=1-1&keywords=random+restaurant',
+              event: 'alexaSkills-randomRestaurant'
+            },
+            {
+              name: 'Source',
+              url: 'https://github.com/cnorick/randomRestaurant',
+              event: 'github-randomRestaurant'
+            }
+          ]
         }
       ]
     }
@@ -103,21 +191,24 @@ export default {
 
 .experience {
   .project {
-    .header {
-      margin-bottom: 20px;
-      .date {
-        display: flex;
-        flex-direction: column;
-        span {
-          @media screen and (min-width: $tablet) {
-            align-self: flex-end;
+    .box {
+      height: 100%;
+      .header {
+        margin-bottom: 20px;
+        .date {
+          display: flex;
+          flex-direction: column;
+          span {
+            @media screen and (min-width: $tablet) {
+              align-self: flex-end;
+            }
           }
         }
       }
-    }
-    hr.links-divider {
-      margin-top: 1.5rem;
-      margin-bottom: 1rem;
+      hr.links-divider {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
     }
   }
 }
