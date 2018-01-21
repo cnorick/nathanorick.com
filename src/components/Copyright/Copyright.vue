@@ -2,7 +2,7 @@
     <footer class="footer">
         <div class="container">
             <div class="content has-text-centered">
-                <p class="copyright">&copy; 2017 Nathan Orick</p>
+                <p class="copyright">&copy; 2017 - 2018 Nathan Orick</p>
             </div>
         </div>
     </footer>
