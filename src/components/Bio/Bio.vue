@@ -7,8 +7,8 @@
           <p class="bio-paragraph">
             I am a
             <a ga-event="eecs" href="http://www.eecs.utk.edu/">Computer Science</a> student at the
-            <a ga-event="utk" href="http://www.utk.edu/">University of Tennessee, Knoxville</a> minoring in Math, and graduating May 12th, 2018. At UT, I am an ambassador for the
-            <a ga-event="coop" href="http://www.coop.utk.edu/">Engineering Professional Practice Office</a> where I counsel engineering students in their internship searches.
+            <a ga-event="utk" href="http://www.utk.edu/">University of Tennessee, Knoxville</a> minoring in <a href="https://www.math.utk.edu/">Math</a>, and graduating May 2018. At UT, I'm an ambassador for the
+            <a ga-event="coop" href="http://www.coop.utk.edu/people/nathan-orick">Engineering Professional Practice Office</a> where I counsel engineering students in their internship searches. I'm also a Teaching Assistant in the Computer Science department, currently helping with a Data Structures and Algorithms class.
           </p>
           <p class="bio-paragraph">I recently finished four terms as a software development intern at
             <a ga-event="osi" href="http://www.osisoft.com/">OSIsoft, LLC</a>. I worked three semesters in the Johnson City, TN office, and one semester at OSIsoft's HQ in San Leandro, CA.
