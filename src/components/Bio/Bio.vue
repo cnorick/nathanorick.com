@@ -5,16 +5,14 @@
       <div class="column is-half-widescreen is-three-quarters-tablet">
         <div>
           <p class="bio-paragraph">
-            I am a
-            <a ga-event="eecs" href="http://www.eecs.utk.edu/">Computer Science</a> student at the
-            <a ga-event="utk" href="http://www.utk.edu/">University of Tennessee, Knoxville</a> minoring in <a href="https://www.math.utk.edu/">Math</a>, and graduating May 2018. At UT, I'm an ambassador for the
-            <a ga-event="coop" href="http://www.coop.utk.edu/people/nathan-orick">Engineering Professional Practice Office</a> where I counsel engineering students in their internship searches. I'm also a Teaching Assistant in the Computer Science department, currently helping with a Data Structures and Algorithms class.
+            Recent
+            <a ga-event="eecs" href="http://www.eecs.utk.edu/">Computer Science</a> / <a href="https://www.math.utk.edu/">Math</a> grad from the
+            <a ga-event="utk" href="http://www.utk.edu/">University of Tennessee, Knoxville</a>.
           </p>
-          <p class="bio-paragraph">I recently finished four terms as a software development intern at
-            <a ga-event="osi" href="http://www.osisoft.com/">OSIsoft, LLC</a>. I worked three semesters in the Johnson City, TN office, and one semester at OSIsoft's HQ in San Leandro, CA.
-            Check out what I worked on while at OSIsoft <a href="#OSI">below</a> in the Experience section.
+          <p class="bio-paragraph">
+            Currently an <a href="https://angular.io/">Angular</a> developer on a customer-facing product at <a ga-event="osi" href="http://www.osisoft.com/">OSIsoft</a> in San Leandro, CA. 
           </p>
-          <p class="bio-paragraph">I love programming, and I'm really excited work in software development professionally after graduation! I can't wait to put my skills and knowledge to good use on projects that will change the world.</p>
+          <p class="bio-paragraph">Programming is my passion! I love building software that is both exciting and useful, and I'm always looking to work on new projects that can make a real difference in the world.</p>
         </div>
       </div>
     </div>
