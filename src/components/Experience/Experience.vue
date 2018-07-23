@@ -19,8 +19,8 @@
                 <p class="experience-paragraph" v-html="p"></p>
                 <br v-if="i != e.paragraphs.length - 1" />
               </div>
-              <hr v-if="e.links" class="links-divider">
               <div class="links-container">
+                <hr v-if="e.links" class="links-divider">
                 <div v-if="e.links" class="columns is-centered">
                   <br>
                   <span v-for="l in e.links" class="column has-text-centered">
@@ -43,6 +43,32 @@ export default {
   data: () => {
     return {
       experiences: [
+        {
+          title: `Squirrel Petting Simulator`,
+          subtitle: `Computer Graphics Project`,
+          id: 'squirrel-game',
+          startDate: 'March 2018',
+          endDate: 'May 2018',
+          paragraphs: [
+            `Squirrel Petting Simulator is a game I created for my computer graphics class. The shaders were required
+            for grading in the class, and were written using WebGL. The animation and the game mechanics I created just for
+            fun after finishing the work required for grading. All of the 3D objects I borrowed from creators online.`,
+
+            `Click below to play the game! The controls required a keyboard, so unfortunately, it doesn't work on mobile.`
+          ],
+          links: [
+            {
+              name: 'Play the Game',
+              url: 'https://content.nathanorick.com/squirrel/index.html',
+              event: 'play-squirrel'
+            },
+            {
+              name: 'Source',
+              url: 'https://github.com/cnorick/Squirrel-Petting-Simulator',
+              event: 'github-squirrel'
+            }
+          ]
+        },
         {
           title: `OSIsoft`,
           subtitle: `Development Co-op`,
@@ -118,9 +144,11 @@ export default {
           }
         }
       }
-      hr.links-divider {
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
+      .links-container {
+        hr.links-divider {
+          margin-top: 1.5rem;
+          margin-bottom: 1rem;
+        }
       }
     }
   }
