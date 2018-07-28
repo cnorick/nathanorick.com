@@ -1,34 +1,34 @@
 <template>
   <div class="experience">
     <h2 class="title is-2 header has-text-centered">Projects</h2>
-        <div class="columns is-desktop is-5 is-multiline is-marginless is-centered is-variable is-6">
-          <div v-for="e in experiences" v-bind:id="e.id"
-               class="column is-half-desktop project">
-            <div class="box">
-              <div class="header columns">
-                <div class="experience-title column is-two-thirds">
-                  <h3 class="title is-3">{{e.title}}</h3>
-                  <h4 class="subtitle is-5">{{e.subtitle}}</h4>
-                </div>
-                <div class="date column is-one-third">
-                  <span>{{e.startDate}}{{e.endDate ? '-': ''}}{{e.endDate}}</span>
-                </div>
-              </div>
-              <hr>
-              <div v-for="(p, i) in e.paragraphs">
-                <p class="experience-paragraph" v-html="p"></p>
-                <br v-if="i != e.paragraphs.length - 1" />
-              </div>
-              <div class="links-container">
-                <hr v-if="e.links" class="links-divider">
-                <div v-if="e.links" class="columns is-centered">
-                  <br>
-                  <span v-for="l in e.links" class="column has-text-centered">
-                    <a :href="l.url" :ga-event="l.event">{{l.name}}</a>
-                  </span>
-                </div>
-              </div>
+    <div class="columns is-desktop is-5 is-multiline is-marginless is-centered is-variable is-6">
+      <div v-for="e in experiences" v-bind:id="e.id"
+           class="column is-half-desktop project">
+        <div class="box">
+          <div class="header columns">
+            <div class="experience-title column is-two-thirds">
+              <h3 class="title is-3">{{e.title}}</h3>
+              <h4 class="subtitle is-5">{{e.subtitle}}</h4>
             </div>
+            <div class="date column is-one-third">
+              <span>{{e.startDate}}{{e.endDate ? '-': ''}}{{e.endDate}}</span>
+            </div>
+          </div>
+          <hr>
+          <div v-for="(p, i) in e.paragraphs">
+            <p class="experience-paragraph" v-html="p"></p>
+            <br v-if="i != e.paragraphs.length - 1" />
+          </div>
+          <div v-if="e.links" class="links-container">
+            <hr class="links-divider">
+            <div v-if="e.links" class="columns is-centered">
+              <br>
+              <span v-for="l in e.links" class="column has-text-centered">
+                <a :href="l.url" :ga-event="l.event">{{l.name}}</a>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -47,14 +47,14 @@ export default {
           title: `Squirrel Petting Simulator`,
           subtitle: `Computer Graphics Project`,
           id: 'squirrel-game',
-          startDate: 'March 2018',
+          startDate: 'Mar 2018',
           endDate: 'May 2018',
           paragraphs: [
             `Squirrel Petting Simulator is a game I created for my computer graphics class. The shaders were required
-            for grading in the class, and were written using WebGL. The animation and the game mechanics I created just for
-            fun after finishing the work required for grading. All of the 3D objects I borrowed from creators online.`,
+            for the project, and were written using WebGL. The animation and the game mechanics I coded in just for
+            fun. All of the 3D objects I borrowed from creators online.`,
 
-            `Click below to play the game! The controls required a keyboard, so unfortunately, it doesn't work on mobile.`
+            `Click below to play the game! The controls require a keyboard and mouse, and the game works best on Chrome.`
           ],
           links: [
             {
