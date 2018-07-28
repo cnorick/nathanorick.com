@@ -15,7 +15,7 @@
             </div>
           </div>
           <hr>
-          <div v-for="(p, i) in e.paragraphs">
+          <div v-for="(p, i) in e.paragraphs" class="experience-content">
             <p class="experience-paragraph" v-html="p"></p>
             <br v-if="i != e.paragraphs.length - 1" />
           </div>
@@ -131,6 +131,8 @@ export default {
 .experience {
   .project {
     .box {
+      display: flex;
+      flex-direction: column;
       height: 100%;
       .header {
         margin-bottom: 20px;
@@ -142,6 +144,12 @@ export default {
               align-self: flex-end;
             }
           }
+        }
+      }
+      .experience-content {
+        flex-grow: 1;
+        .experience-paragraph {
+
         }
       }
       .links-container {
