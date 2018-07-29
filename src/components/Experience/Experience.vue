@@ -1,6 +1,5 @@
 <template>
   <div class="experience">
-    <!-- <h2 class="title is-2 header has-text-centered">Projects</h2> -->
     <div class="columns is-desktop is-5 is-multiline is-marginless is-centered is-variable is-6">
       <div v-for="(e) in experiences" v-bind:key="e.id"
            class="column is-half-desktop project">
