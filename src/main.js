@@ -4,11 +4,22 @@ import Vue from 'vue'
 import App from './App'
 import VueAnalytics from 'vue-analytics'
 import Icon from 'vue-awesome/components/Icon'
+import VueScrollReveal from 'vue-scroll-reveal'
 import 'bulma'
 
 Vue.component('icon', Icon)
 
 Vue.config.productionTip = false
+
+Vue.use(VueScrollReveal, {
+  class: 'v-scroll-reveal', // A CSS class applied to elements with the v-scroll-reveal directive; useful for animation overrides.
+  duration: 600,
+  delay: 0,
+  scale: 0.8,
+  opacity: 0.2,
+  viewFactor: 0.25,
+  reset: true
+})
 
 Vue.use(VueAnalytics, {
   id: process.env.GA_KEY,
