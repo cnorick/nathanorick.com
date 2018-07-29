@@ -2,9 +2,9 @@
   <div class="experience">
     <div class="columns is-desktop is-5 is-multiline is-marginless is-centered is-variable is-6">
       <div v-for="(e) in experiences" v-bind:key="e.id"
-           class="column is-half-desktop project">
-        <div class="box"
-             v-scroll-reveal="e.scrollObj">
+           class="column is-half-desktop project"
+           v-scroll-reveal="e.scrollObj">
+        <div class="box">
           <div class="header columns">
             <div class="experience-title column is-two-thirds">
               <h3 class="title is-3">{{e.title}}</h3>
