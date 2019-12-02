@@ -37,7 +37,7 @@ export default [
       on github, then added some new content and features to make the site unique to us.`,
 
       `On the site, our guests were able to learn about how Sarah and I met, get to know the people  in our wedding party, get directions or order an uber to the
-      venue, find links to our gift registries, or get answers to more of the common questions about the ceremony.`,
+      venue, find links to our gift registries, or get answers to common questions about the ceremony.`,
 
       `The coolest thing about the site, however, was that our guests could RSVP without filling out those so-easy-to-lose RSVP cards. The backend setup for the
        RSVP feature was super simple. The web app made requests directly to Google Sheets, so our guest list was automatically updated and easy to sort and search.
