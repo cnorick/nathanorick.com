@@ -31,6 +31,7 @@ export default [
   {
     title: `Wedding Website`,
     id: 'weddingsite',
+    startDate: 'June 2019',
     paragraphs: [
       `My wife, Sarah, and I got married June 15, 2019. to prepare for the occasion, I created a website to
       provide our guests with info about us and about the ceremony. To start, I forked <a href="https://github.com/rampatra/wedding-website">wedding-website</a>
