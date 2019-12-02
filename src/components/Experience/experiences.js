@@ -103,6 +103,16 @@ export default [
     ]
   },
   {
+    title: `Presentations`,
+    subtitle: `Links to Slides`,
+    id: 'slides',
+    startDate: null,
+    paragraphs: [
+      `<a href="https://docs.google.com/presentation/d/1BhCy5KHv75PNp6V4VI-9CtxDuRu-IwVTRVcv6wyl4T0/edit#slide=id.p">Testing Angular UI</a>`,
+      `<a href="https://docs.google.com/presentation/d/1eDM8PsqXy5y69bJYOJFTgkb-7FXvA90JEN7VNh6BukM/edit#slide=id.p">Intro to Progressive Web Apps</a>`
+    ]
+  },
+  {
     title: `OSIsoft`,
     subtitle: `Development Co-op`,
     id: 'OSI',
