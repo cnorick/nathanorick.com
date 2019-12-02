@@ -1,5 +1,48 @@
 export default [
   {
+    title: `Five in the Hive`,
+    subtitle: `Fantasy Sports Web App`,
+    id: '5inthehive',
+    paragraphs: [
+      `Five in the Hive is ...`,
+
+      `Click below to play!`
+    ],
+    links: [
+      {
+        name: 'Open the App',
+        url: 'https://fiveinthehive.net',
+        event: 'play-fiveinthehive'
+      },
+      {
+        name: 'Source',
+        url: 'https://github.com/kanepenley/fiveinthehive',
+        event: 'github-fiveinthehive'
+      }
+    ]
+  },
+  {
+    title: `Wedding Website`,
+    id: 'weddingsite',
+    paragraphs: [
+      `Five in the Hive is ...`,
+
+      `Click below to play!`
+    ],
+    links: [
+      {
+        name: 'Webpage',
+        url: 'https://content.nathanorick.com/wedding/index.html',
+        event: 'open-wedding'
+      },
+      {
+        name: 'Source',
+        url: 'https://github.com/kanepenley/fiveinthehive',
+        event: 'github-wedding'
+      }
+    ]
+  },
+  {
     title: `Squirrel Petting Simulator`,
     subtitle: `Computer Graphics Project`,
     id: 'squirrel-game',
@@ -23,27 +66,6 @@ export default [
         url: 'https://github.com/cnorick/Squirrel-Petting-Simulator',
         event: 'github-squirrel'
       }
-    ]
-  },
-  {
-    title: `OSIsoft`,
-    subtitle: `Development Co-op`,
-    id: 'OSI',
-    startDate: 'Jan 2016',
-    endDate: 'Aug 2017',
-    paragraphs: [
-      `I worked for twelve consecutive months at the Johnson City, TN office. There, I developed data-analysis
-        software that collects, persists, analyzes, and visualizes customer and employee contribution and
-        interaction on the company’s community website. The application was written with a .NET/C# backend
-        and AngularJS front-end. This software helped Customer Support Engineers better understand and more
-        efficiently respond to customer needs. Not only that, but it also greatly reduced the amount of
-        time it took each week to assemble critical reports. While working on this project, I had the opportunity
-        to get familiar with AngularJS, Javascript, C#, .NET, and SQL.`,
-
-      `I also worked for three months at the OSIsoft Headquarters in San Leandro, CA. There, I worked as a part
-        of a larger team, developing and testing an Angular UI for customer-facing software. I contributed to this project
-        by migrating a large section of existing UI code from Angular 1 to Angular 4, writing UI tests using Jasmine and Angular
-        testing tools, and designing/writing new components for the UI.`
     ]
   },
   {
@@ -73,6 +95,27 @@ export default [
         url: 'https://github.com/cnorick/randomRestaurant',
         event: 'github-randomRestaurant'
       }
+    ]
+  },
+  {
+    title: `OSIsoft`,
+    subtitle: `Development Co-op`,
+    id: 'OSI',
+    startDate: 'Jan 2016',
+    endDate: 'Aug 2017',
+    paragraphs: [
+      `I worked for twelve consecutive months at the Johnson City, TN office. There, I developed data-analysis
+        software that collects, persists, analyzes, and visualizes customer and employee contribution and
+        interaction on the company’s community website. The application was written with a .NET/C# backend
+        and AngularJS front-end. This software helped Customer Support Engineers better understand and more
+        efficiently respond to customer needs. Not only that, but it also greatly reduced the amount of
+        time it took each week to assemble critical reports. While working on this project, I had the opportunity
+        to get familiar with AngularJS, Javascript, C#, .NET, and SQL.`,
+
+      `I also worked for three months at the OSIsoft Headquarters in San Leandro, CA. There, I worked as a part
+        of a larger team, developing and testing an Angular UI for customer-facing software. I contributed to this project
+        by migrating a large section of existing UI code from Angular 1 to Angular 4, writing UI tests using Jasmine and Angular
+        testing tools, and designing/writing new components for the UI.`
     ]
   }
 ]
