@@ -30,6 +30,14 @@
             LinkedIn
           </span>
         </a>
+        <a class="button is-outlined" ga-event="resume" href="https://cnorick.github.io/markdown-cv/">
+          <span class="icon">
+            <icon name="paperclip"></icon>
+          </span>
+          <span>
+            Resume
+          </span>
+        </a>
       </p>
     </div>
   </div>
@@ -38,6 +46,7 @@
 <script>
 import 'vue-awesome/icons/github'
 import 'vue-awesome/icons/linkedin'
+import 'vue-awesome/icons/paperclip'
 // import Vue from 'vue'
 
 export default {
