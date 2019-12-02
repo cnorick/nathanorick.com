@@ -5,12 +5,11 @@
       <div class="column is-half-widescreen is-three-quarters-tablet">
         <div>
           <p class="bio-paragraph">
-            Recent
-            <a ga-event="eecs" href="http://www.eecs.utk.edu/">Computer Science</a> / <a href="https://www.math.utk.edu/">Math</a> grad from the
-            <a ga-event="utk" href="http://www.utk.edu/">University of Tennessee, Knoxville</a>.
+            I'm currently an <a href="https://angular.io/">Angular</a> developer on 3 customer-facing products at <a ga-event="osi" href="http://www.osisoft.com/">OSIsoft</a> in San Leandro, CA. 
           </p>
           <p class="bio-paragraph">
-            Currently an <a href="https://angular.io/">Angular</a> developer on a customer-facing product at <a ga-event="osi" href="http://www.osisoft.com/">OSIsoft</a> in San Leandro, CA. 
+            <a ga-event="eecs" href="http://www.eecs.utk.edu/">Computer Science</a> / <a href="https://www.math.utk.edu/">Math</a> grad from the
+            <a ga-event="utk" href="http://www.utk.edu/">University of Tennessee, Knoxville</a>.
           </p>
           <p class="bio-paragraph">Programming is my passion! I love building software that is both exciting and useful, and I'm always looking to work on new projects that can make a real difference in the world.</p>
         </div>
