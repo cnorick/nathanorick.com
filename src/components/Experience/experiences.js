@@ -25,20 +25,25 @@ export default [
     title: `Wedding Website`,
     id: 'weddingsite',
     paragraphs: [
-      `Five in the Hive is ...`,
+      `My wife, Sarah, and I got married June 15, 2019. to prepare for the occasion, I created a website to
+      provide our guests with info about us and about the ceremony. To start, I forked <a href="https://github.com/rampatra/wedding-website">wedding-website</a>
+      on github, then added some new content and features to make the site unique to us.`,
 
-      `Click below to play!`
+      `On the site, our guests were able to learn about how Sarah and I met, get to know the people  in our wedding party, get directions or order an uber to the
+      venue, find links to our gift registries, or get answers to more of the common questions about the ceremony.`,
+
+      `The coolest thing about the site, however, was that our guests could RSVP without filling out those so-easy-to-lose RSVP cards. The backend setup for the
+       RSVP feature was super simple. The web app made requests directly to Google Sheets, so our guest list was automatically updated and easy to sort and search.
+       Not only that, but Google Sheets allowed us to register event handlers to send our guests confirmation emails as well as notify Sarah and me that we'd
+       gotten a new hit.`,
+
+      `The wedding is already over, but you can still RSVP at the link below! (use code 0615)`
     ],
     links: [
       {
         name: 'Webpage',
         url: 'https://content.nathanorick.com/wedding/index.html',
         event: 'open-wedding'
-      },
-      {
-        name: 'Source',
-        url: 'https://github.com/kanepenley/fiveinthehive',
-        event: 'github-wedding'
       }
     ]
   },
