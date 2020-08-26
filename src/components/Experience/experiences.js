@@ -99,8 +99,8 @@ export default [
     ],
     links: [
       {
-        name: 'Enable the Skill',
-        url: 'https://www.amazon.com/Nathan-Orick-Random-Restaurant/dp/B0739K8V4N/ref=sr_1_1?s=digital-skills&ie=UTF8&qid=1505581691&sr=1-1&keywords=random+restaurant',
+        name: 'Try Skill',
+        url: 'https://alexa-skills.amazon.com/apis/custom/skills/amzn1.ask.skill.4a0f1551-2ef7-4e03-9b76-a5a4793cc7fa/launch',
         event: 'alexaSkills-randomRestaurant'
       },
       {
