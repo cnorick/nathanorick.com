@@ -272,8 +272,15 @@ blockquote {
   }
 }
 
+.top-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 // Wrapper
-.wrapper {
+.content-wrapper {
   max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full} * 2));
   max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
   position: relative;

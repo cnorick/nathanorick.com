@@ -6,4 +6,10 @@
   />
   <h2 class="author-name">{{ site.author.name }}</h2>
   <p class="author-bio">{{ site.author.bio }}</p>
+  <div class="socials-buttons">
+    {% if site.author.github %}
+    {% include github_follow_button.html github=site.author.github show_follower_count=site.author.show_github_follower_count%}
+    {% endif %}
+  </div>
+
 </div>

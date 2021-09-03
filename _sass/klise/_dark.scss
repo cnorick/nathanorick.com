@@ -210,10 +210,10 @@ body[data-theme="dark"] {
     span.footer_item {
       color: $dark-white;
     }
-    a.footer_item:not(:last-child) {
+    a.footer_item {
       color: $dark-white;
     }
-    .footer_copyright {
+    .footer-copyright {
       color: $dark-gray;
       opacity: 1;
     }

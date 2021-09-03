@@ -1,22 +1,11 @@
 <footer class="footer">
-  <a class="footer_item" href="/thanks">ack.</a>
-  <a class="footer_item" href="javascript::void(0)">resume</a>
-  <a class="footer_item" href="/feed.xml">rss</a>
-  <span class="footer_item">&copy; {{ site.time | date: "%Y" }}</span>
-  <small class="footer_copyright">
-    <!-- Klisé Theme: https://github.com/piharpi/jekyll-klise -->
-    <a
-      href="https://github.com/piharpi/jekyll-klise"
-      target="_blank"
-      rel="noreferrer noopener"
-      >klisé</a
-    >
-    theme on
-    <a href="https://jekyllrb.com" target="_blank" rel="noreferrer noopener"
-      >jekyll</a
-    >
-  </small>
-</footer>
+  <div class="footer-links">
+    <a class="footer_item" href="http://www.linkedin.com/in/nathan-orick">linkedin</a>
+    <a class="footer_item" href="https://cnorick.github.io/markdown-cv/">resume</a>
+    <a class="footer_item" href="/contact">contact</a>
+    <a class="footer_item" href="/feed.xml">rss</a>
+  </div>
+  <span class="footer-copyright footer_item">&copy; {{ site.time | date: "%Y" }} {{site.author.name}}</span>
 <script src="/assets/js/main.js" defer="defer"></script>
 
 {%- if page.google_analytics -%}
@@ -26,7 +15,7 @@
     galite.UA = "{{ site.google_analytics }}";
   </script>
 {%- endif -%}
-{%- if page.url == '/archive/' -%}
+{%- if page.url == '/posts/' -%}
   <script src="/assets/js/search.min.js"></script>
   <script>
     var sjs = SimpleJekyllSearch({
