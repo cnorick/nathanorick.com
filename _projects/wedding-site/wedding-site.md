@@ -5,7 +5,7 @@ date: 2019-06-15
 modified: 2021-09-02
 tags: [project, website]
 description: The website I made for my wife and my wedding.
-image: assets/images/wedding-site.png
+image: assets/img/wedding-site.png
 ---
 My wife, Sarah, and I got married June 15, 2019. to prepare for the occasion, I created a website to provide our guests with info about us and about the ceremony. To start, I forked [wedding-website](https://github.com/rampatra/wedding-website) on github, then added some new content and features to make the site unique to us.
 
