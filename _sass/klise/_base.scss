@@ -277,10 +277,7 @@ blockquote {
   min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
-}
 
-// Wrapper
-.content-wrapper {
   max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full} * 2));
   max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
   position: relative;
@@ -301,6 +298,30 @@ blockquote {
       -webkit-animation: 0.2s ease-in forwards blur;
     }
   }
+}
+
+// Wrapper
+.content-wrapper {
+  // max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full} * 2));
+  // max-width: calc(#{$narrow-size} - (#{$spacing-full} * 2));
+  // position: relative;
+  // margin-right: auto;
+  // margin-left: auto;
+  // padding-right: $spacing-full;
+  // padding-left: $spacing-full;
+  // @extend %clearfix;
+
+  // @include media-query($on-mobile) {
+  //   max-width: -webkit-calc(#{$narrow-size} - (#{$spacing-full}));
+  //   max-width: calc(#{$narrow-size} - (#{$spacing-full}));
+  //   padding-right: $spacing-full - 10;
+  //   padding-left: $spacing-full - 10;
+
+  //   &.blurry {
+  //     animation: 0.2s ease-in forwards blur;
+  //     -webkit-animation: 0.2s ease-in forwards blur;
+  //   }
+  // }
 }
 
 // Underline
