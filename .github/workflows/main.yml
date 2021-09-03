@@ -21,12 +21,28 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: Jekyll Build
-        uses: kshehadeh/jekyll-s3-action@0.1
+      - name: Build
+        uses: jerryjvl/jekyll-build-action@v1
+      
+      - name: S3 Sync
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --acl public-read --follow-symlinks --delete
         env: 
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-          S3_BUCKET_NAME: "nathanorick.com"
-          S3_BUCKET_PATH: "" 
+          AWS_S3_BUCKET: ${{secrets.AWS_BUCKET_NAME}}
+          SOURCE_DIR: '_site'
+          
+      - name: invalidate cloudfront
+        uses: chetan/invalidate-cloudfront-action@master
+        env:
+          DISTRIBUTION: ${{ secrets.CLOUD_FRONT_DISTRO }}
+          PATHS: '/*'
+          AWS_REGION: 'us-east-1'
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      
