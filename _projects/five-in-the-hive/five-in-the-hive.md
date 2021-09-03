@@ -5,7 +5,7 @@ date: 2019-05-01
 modified: 2021-09-02
 tags: [project, angular, pwa, web]
 description: An angular web app for fantasy sports.
-image: "./image.png"
+image: assets/img/five-in-the-hive.png
 ---
 My roommate, [Kane](http://kanepenley.com/) loves football! For years, he and his friends have played a fantasy football game with a bit of a twist. Each week during the season, each person chooses five NFL teams that they think will win against the Vegas spread for a specific game. In the past, everyone shared their picks in a group message, and calculated a leaderboard at the end of each week and again at the end of the season, but all that was a ton of work, so we made it easier!
 

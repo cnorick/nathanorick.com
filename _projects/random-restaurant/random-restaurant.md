@@ -5,7 +5,7 @@ date: 2017-07-08
 modified: 2021-09-02
 tags: [project, alexa, aws]
 description: An Amazon Alexa Skill that helps you decide where to eat.
-image: "./image.png"
+image: assets/images/random-restaurant.png
 ---
 Random Restaurant is an Alexa Skill that helps people decide where to eat. Often, friends may disagree on what to have for dinner, or if someone is new to an area, they may not be aware of all the nearby food options. Users can simply say "Alexa, ask Random Restaurant for a place to eat", and the app will give them a restaurant recommendation that is nearby and currently open.
 
