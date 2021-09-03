@@ -1,0 +1,38 @@
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 600px));
+  justify-items: center;
+  align-items: stretch;
+  justify-content: center;
+  gap: 3rem;
+  margin: 0.6rem;
+}
+
+.project-item {
+  border: solid 1px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+
+  border-color: $smoke;
+
+  body[data-theme="dark"] & {
+    border-color: $dark-smoke;
+  }
+}
+
+.project-title, h3.project-title {
+  margin: 0.625rem;
+  margin-top: 0.625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.project-subtitle {
+  font-weight: $normal-weight;
+  min-height: 2em;
+}
+

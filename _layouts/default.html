@@ -10,7 +10,7 @@ layout: compress
   <script>
   </script>
 
-  <div class="top-container">
+  <div class="top-container {% if page.full_width -%} full-width {%- endif -%}">
     {% include navbar.html %}
     <div class="content-wrapper">
       {{ content }}

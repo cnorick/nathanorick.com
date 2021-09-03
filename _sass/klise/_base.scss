@@ -297,6 +297,10 @@ blockquote {
       -webkit-animation: 0.2s ease-in forwards blur;
     }
   }
+
+  &.full-width {
+    max-width: unset;
+  }
 }
 
 // Wrapper
