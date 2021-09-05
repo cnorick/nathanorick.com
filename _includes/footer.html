@@ -15,7 +15,10 @@
     galite.UA = "{{ site.google_analytics }}";
   </script>
 {%- endif -%}
-{%- if page.url == '/posts/' -%}
+{%- capture posts_url -%}
+{% link archive.html %}
+{%- endcapture -%}
+{%- if page.url == posts_url -%}
   <script src="/assets/js/search.min.js"></script>
   <script>
     var sjs = SimpleJekyllSearch({

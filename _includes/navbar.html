@@ -165,19 +165,26 @@
         {%- assign menus = site.data.menus -%}
         {%- if menus %}
           {%- for menu in menus -%} 
-            {%- if url == menu.url -%}
-              <a class="menu-link active" href="{{ menu.url }}">{{ menu.title }}</a>
+            {% capture menu_url %}
+            {%- if menu.url -%}
+              {{ menu.url }}
+            {%- else -%}
+              {% link {{menu.link}} %}
+            {%- endif -%}
+            {%- endcapture -%}
+            {%- if url == menu_url -%}
+              <a class="menu-link active" href="{{ menu_url }}">{{ menu.title }}</a>
             {%- else -%} 
               {%- if menu.external -%}
                 <a
                   class="menu-link"
-                  href="{{ menu.url }}"
+                  href="{{ menu_url }}"
                   target="_blank"
                   rel="noopener"
                   >{{ menu.title }}</a
                 >
               {%- else -%}
-                <a class="menu-link" href="{{ menu.url }}">{{ menu.title }}</a>
+                <a class="menu-link" href="{{ menu_url }}">{{ menu.title }}</a>
               {%- endif -%} 
             {%- endif -%} 
           {%- endfor -%}
