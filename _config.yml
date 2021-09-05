@@ -40,6 +40,8 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   syntax_highlighter: rouge
+  header_offset: 1
+
 
 # Default front matter
 defaults:
