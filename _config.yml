@@ -70,6 +70,8 @@ number_of_posts: 5
 sass:
   style: compressed
 
+future: false
+
 include:
   - _redirects
   - .htaccess
