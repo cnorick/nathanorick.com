@@ -26,7 +26,7 @@ author:
 url: "https://nathanorick.com" #
 baseurl: '/'
 permalink: /:title/
-google_analytics: # leave it blank if not wish
+google_analytics: UA-102148746-2
 fb_appid:
 
 # Collection setting

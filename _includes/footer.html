@@ -7,24 +7,3 @@
   </div>
   <span class="footer-copyright footer_item">&copy; {{ site.time | date: "%Y" }} {{site.author.name}}</span>
 <script src="/assets/js/main.js" defer="defer"></script>
-
-{%- if page.google_analytics -%}
-  <script src="/assets/js/galite.js"></script>
-  <script>
-    var galite = galite || {};
-    galite.UA = "{{ site.google_analytics }}";
-  </script>
-{%- endif -%}
-{%- capture posts_url -%}
-{% link archive.html %}
-{%- endcapture -%}
-{%- if page.url == posts_url -%}
-  <script src="/assets/js/search.min.js"></script>
-  <script>
-    var sjs = SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('search-results'),
-      json: '/assets/search.json',
-    });
-  </script>
-{%- endif -%}
