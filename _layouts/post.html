@@ -5,7 +5,6 @@ layout: default
 <div class="post">
   <main class="page-content" aria-label="Content">
     <article itemscope itemtype="https://schema.org/BlogPosting">
-
       <header class="header">
         {% if page.tags and page.tags != empty %}
         <div class="tags">
@@ -21,12 +20,22 @@ layout: default
         <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
         {% if page.date %}
         <div class="post-meta">
-          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-            {{ page.date | date: "%b %d, %Y" }}
-          </time>
-          <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-            <span itemprop="name">{{ site.author.name }}</span>
+          <div class="date-and-author">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+              {{ page.date | date: "%b %d, %Y" }}
+            </time>
+            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+              <span itemprop="name">{{ site.author.name }}</span>
+            </span>
+          </div>
+          {% if site.wpm %}
+          {% assign read_time = page.content | number_of_words | divided_by: site.wpm %}
+          <span>
+            {% if read_time > 0 %} {{ read_time }}
+            {% else %} < 1 {% endif %}
+            min read
           </span>
+          {% endif %}
           <time hidden datetime="{{ page.modified | date_to_xmlschema }}" itemprop="dateModified">
             {{ page.date | date: "%b %d, %Y" }}
           </time>
