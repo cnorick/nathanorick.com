@@ -10,6 +10,18 @@
     setTheme(newTheme);
   };
 
+  const setThemeForUtterances = (theme) => {
+    if (document.querySelector('.utterances-frame')) {
+      const utteranceTheme = theme === 'dark' ? 'github-dark' : 'github-light';
+      const message = {
+        type: 'set-theme',
+        theme: utteranceTheme
+      };
+      const iframe = document.querySelector('.utterances-frame');
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+    }
+  }
+
   const setTheme = (state) => {
     theme = state;
     if (state === "dark") {
@@ -17,6 +29,7 @@
     } else if (state === "light") {
       body.removeAttribute("data-theme");
     }
+    setTimeout(() => setThemeForUtterances(theme), 1000);
   };
 
   const getInitialTheme = () => {
