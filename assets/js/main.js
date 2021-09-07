@@ -12,7 +12,7 @@
 
   const setThemeForUtterances = (theme) => {
     if (document.querySelector('.utterances-frame')) {
-      const utteranceTheme = theme === 'dark' ? 'github-dark' : 'github-light';
+      const utteranceTheme = theme === 'dark' ? 'photon-dark' : 'github-light';
       const message = {
         type: 'set-theme',
         theme: utteranceTheme
