@@ -18,6 +18,12 @@
   -webkit-user-select: none;
 
   a#mode {
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     float: left;
     left: 8px;
     top: 6px;
