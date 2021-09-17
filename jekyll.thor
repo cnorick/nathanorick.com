@@ -1,12 +1,20 @@
 # $ thor jekyll:new The title of the new post --editor=vim
 
 require "stringex"
+require 'date'
+
 class Jekyll < Thor
   desc "new", "create a new post"
   method_option :editor, :default => "code"
+  option :publishDay, :default => "Monday"
+
   def new(*title)
     title = title.join(" ")
-    date = Time.now.strftime('%Y-%m-%d')
+    date = Date.parse(options[:publishDay])
+    delta = date > Date.today ? 0 : 7
+    date = date + delta
+    date = date.strftime('%Y-%m-%d')
+
     filename = "_posts/#{date}-#{title.to_url}.markdown"
 
     if File.exist?(filename)
