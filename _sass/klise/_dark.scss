@@ -238,4 +238,13 @@ body[data-theme="dark"] {
       }
     }
   }
+
+  button {
+    border-color: $dark-text-base-color;
+    color: $dark-text-base-color;
+
+    &:hover {
+      background-color: $dark-smoke;
+    }
+  }
 }

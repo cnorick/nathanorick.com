@@ -11,16 +11,16 @@
   };
 
   const setThemeForUtterances = (theme) => {
-    if (document.querySelector('.utterances-frame')) {
-      const utteranceTheme = theme === 'dark' ? 'photon-dark' : 'github-light';
+    if (document.querySelector(".utterances-frame")) {
+      const utteranceTheme = theme === "dark" ? "photon-dark" : "github-light";
       const message = {
-        type: 'set-theme',
-        theme: utteranceTheme
+        type: "set-theme",
+        theme: utteranceTheme,
       };
-      const iframe = document.querySelector('.utterances-frame');
-      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+      const iframe = document.querySelector(".utterances-frame");
+      iframe.contentWindow.postMessage(message, "https://utteranc.es");
     }
-  }
+  };
 
   const setTheme = (state) => {
     theme = state;
@@ -46,12 +46,14 @@
 
   lamp.addEventListener("click", () => toggleTheme(theme));
 
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-    if(!localStorage.getItem("theme")) {
-      const newColorScheme = e.matches ? "dark" : "light";
-      setTheme(newColorScheme);
-    }
-  });
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        const newColorScheme = e.matches ? "dark" : "light";
+        setTheme(newColorScheme);
+      }
+    });
 
   setTheme(getInitialTheme());
 
@@ -65,5 +67,30 @@
     this.checked
       ? area.classList.add("blurry")
       : area.classList.remove("blurry");
+  });
+
+  // Copy Code Button
+  var codeBlocks = document.querySelectorAll("pre.highlight");
+  codeBlocks.forEach(function (codeBlock) {
+    var copyButton = document.createElement("button");
+    copyButton.className = "copy-button";
+    copyButton.type = "button";
+    copyButton.ariaLabel = "Copy code to clipboard";
+    copyButton.innerText = "Copy";
+
+    codeBlock.append(copyButton);
+    codeBlock.classList.add("code-block")
+
+    copyButton.addEventListener("click", function () {
+      var code = codeBlock.querySelector("code").innerText.trim();
+      window.navigator.clipboard.writeText(code);
+
+      copyButton.innerText = "Copied";
+      var fourSeconds = 4000;
+
+      setTimeout(function () {
+        copyButton.innerText = "Copy";
+      }, fourSeconds);
+    });
   });
 })();
