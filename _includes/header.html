@@ -10,6 +10,11 @@
       gtag('config', '{{site.google_analytics}}');
     </script>
   {%- endif -%}
+
+  {%- if page.show_ads and jekyll.environment == "production" -%}
+    {% include addsense.html %}
+  {%- endif -%}
+
   <script src="/assets/js/main.js" defer="defer"></script>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
