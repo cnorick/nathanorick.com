@@ -17,10 +17,11 @@ pre.highlight > button:focus {
 
 .copy-button {
     position: absolute;
-    top: 1.4rem;
-    right: 1.4rem;
+    top: 0.2rem;
+    right: 0.2rem;
     border-color: $dark-text-base-color;
     color: $dark-text-base-color;
+    background-color: $dark-black;
 
     &:hover {
       background-color: $dark-smoke;
