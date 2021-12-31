@@ -29,7 +29,7 @@ class Jekyll < Thor
       post.puts "tags:"
       post.puts " -"
       post.puts "image:"
-      post.puts "draft: true"
+      post.puts "published: false"
       post.puts "---"
     end
 
