@@ -15,19 +15,22 @@ class Jekyll < Thor
     date = date + delta
     date = date.strftime('%Y-%m-%d')
 
-    filename = "_posts/#{date}-#{title.to_url}.markdown"
+    filename = "_posts/#{title}/#{date}-#{title.to_url}.md"
 
     if File.exist?(filename)
       abort("#{filename} already exists!")
     end
 
+    dir = "_posts/#{title}"
+    Dir.mkdir(dir)
     puts "Creating new post: #{filename}"
     open(filename, 'w') do |post|
       post.puts "---"
       # post.puts "layout: post"
-      post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+      post.puts "title: #{title.gsub(/&/,'&amp;')}"
       post.puts "tags:"
       post.puts " -"
+      post.puts "description:"
       post.puts "image:"
       post.puts "published: false"
       post.puts "---"
