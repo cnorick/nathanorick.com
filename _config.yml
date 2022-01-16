@@ -100,8 +100,8 @@ exclude:
   - klise-*.gem
   - klise.gemspec
 
-# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-postfiles
+  - jekyll-last-modified-at

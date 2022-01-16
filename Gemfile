@@ -19,6 +19,7 @@ gem "jekyll", "~> 4.1.0"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem 'jekyll-feed', '~> 0.13'
+  gem "jekyll-last-modified-at"
   gem 'jekyll-sitemap', '~> 1.4'
   gem 'jekyll-compose', '~> 0.12.0'
   gem 'jekyll-postfiles', '~> 3.1'
