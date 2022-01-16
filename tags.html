@@ -5,18 +5,19 @@ layout: page
 excerpt: Sorted article by tags.
 ---
 
+{% assign allTags = site.documents | map: 'tags' | uniq %}
 <div class="archive-tags">
   <a class="tag-item" href="#">all</a>
-  {%- for tag in site.tags -%} 
-    {% capture name %}{{ tag | first }}{% endcapture %}
-    <a class="tag-item" href="#{{name}}">{{ name }}</a> 
+  {%- for tag in allTags -%} 
+    <a class="tag-item" href="#{{tag}}">{{ tag }}</a> 
   {%- endfor -%}
 </div>
 
-{%- for tag in site.tags -%}
-  {%- capture name -%}{{ tag | first }}{%- endcapture -%}
-  <h2 id="{{ name }}">{{ name | upcase }}</h2>
-  {%- for post in site.tags[name] -%}
+{%- for tag in allTags -%}
+  <h2 id="{{ tag }}">{{ tag | upcase }}</h2>
+  {% capture expression %}item.tags contains '{{tag}}'{% endcapture %}
+  {% assign allDocsWithTag = site.documents | where_exp: "item", expression %}
+  {%- for post in allDocsWithTag -%}
     <article class="post-item" id="results-container">
       <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>
       <h3 class="post-item-title">
