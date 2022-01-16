@@ -113,7 +113,11 @@
   />
   {% if page.image %}
   {%- capture imageUrl -%}
-    {{ page.url | remove: 'index.html' | remove: '.html' | absolute_url }}{{ page.image }}
+    {%- if page.collection == 'posts' -%}
+      {{ page.url | remove: 'index.html' | remove: '.html' | absolute_url }}{{page.image}}
+    {%- else -%}
+      {{ page.image | absolute_url }}
+    {%- endif -%}
   {%- endcapture -%}
   <meta property="og:image" content="{{ imageUrl }}" />
   {% else %}
