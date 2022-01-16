@@ -1,6 +1,6 @@
 ---
 title: Get RxJS Updates Every Time an Object's Properties Change
-tags: [rxjs, typescript, javascript, rxjs-operator]
+tags: [rxjs, typescript, javascript, rxjs operator]
 description: How to get notified every time a Javascript object's properties change.
 image: sample-use.png
 ---

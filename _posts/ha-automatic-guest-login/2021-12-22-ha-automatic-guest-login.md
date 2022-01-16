@@ -1,6 +1,6 @@
 ---
 title: The Completely Frictionless Way to Let Guests Use Home Assistant
-tags: [home-assistant]
+tags: [home assistant]
 description: Don't make guests download the home assistant app and use log in with guest credentials. Do all the hard work yourself and just share a QR code.
 image: redirect_page.png
 ---

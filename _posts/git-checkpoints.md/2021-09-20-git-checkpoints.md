@@ -1,6 +1,6 @@
 ---
 title: Git Checkpoints
-tags: [git, dev-environment, productivity]
+tags: [git, dev environment, productivity]
 description: Introducing Git Checkpoints - Git aliases that allow you to quickly save your work on the fly.
 ---
 
