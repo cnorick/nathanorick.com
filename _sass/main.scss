@@ -48,6 +48,28 @@ $on-tablet: 769px;
 $on-desktop: 1024px;
 $on-widescreen: 1152px;
 
+:root {
+  --text-base-color: #{$text-base-color};
+  --text-link-blue: #{$text-link-blue};
+  --text-link-blue-active: #{$text-link-blue-active};
+  --black: #{$black};
+  --light: #{$light};
+  --smoke: #{$smoke};
+  --gray: #{$gray};
+  --white: #{$white};
+
+  body[data-theme="dark"] {
+    --text-base-color: #{$dark-text-base-color};
+    --text-link-blue: #{$dark-text-link-blue};
+    --text-link-blue-active: #{$dark-text-link-blue-active};
+    --black: #{$dark-black};
+    --light: #{$dark-light};
+    --smoke: #{$dark-smoke};
+    --gray: #{$dark-gray};
+    --white: #{$dark-white};
+  }
+}
+
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
     @content;
@@ -61,4 +83,4 @@ $on-widescreen: 1152px;
 // Import sass files
 @import "klise/fonts", "klise/base", "klise/layout", "klise/post",
   "klise/miscellaneous", "klise/syntax", "klise/dark";
-@import "project", "alert", "_copy_button";
+@import "project", "alert", "_copy_button", "misc";

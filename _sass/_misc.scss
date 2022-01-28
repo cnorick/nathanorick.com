@@ -1,0 +1,22 @@
+.wide, .wide-image {
+    width: calc(100vw - 20px);
+    margin-left: calc(-50vw + 50% + 10px);
+}
+
+.wide-image {
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+aside {
+    background-color: var(--smoke);
+    border-radius: 10px;
+    padding: 1em;
+    margin-left: 4em;
+    margin-right: 2em;
+    border: 1px solid var(--gray);
+
+    @include media-query($on-mobile) {
+        margin: 0;
+    }
+}
