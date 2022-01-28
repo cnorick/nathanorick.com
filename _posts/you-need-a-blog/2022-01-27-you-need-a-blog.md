@@ -12,8 +12,8 @@ published: false
 ---
 
 If you've read any of my posts, it's obvious I'm not much of a writer. I'm pretty comfortable and confident writing code; I just sit
-down at the keyboard, and the code flows. Even if it's a new language, I can generally pick it up and get moving pretty quickly, but when it comes
-to writing in plain English, the words just don't come.
+down at the keyboard, and the code flows. Even if it's a new language, I can generally pick it up and get moving pretty quickly. When it comes
+to writing in plain English, however, the words just don't come.
 
 It happens a lot, both at work and for side projects: I'll have just written a bunch of code that I'm proud of, but then comes the time to share that
 code with others. Either I need to explain the code in a PR, an email, or technical documentation. Even though the code came easy,
@@ -52,7 +52,7 @@ you don't need anyone else's help. You can write a ton of code, you can write it
 But we all know that's fantasy. No one ever works in a vacuum. In real life, building software often
 ([but not always, apparently](https://stackoverflow.blog/2021/12/31/700000-lines-of-code-20-years-and-one-developer-how-dwarf-fortress-is-built/))
 requires teams of people. Even if you're working all alone on a pet project, you're not actually doing it alone. You're likely working
-with libraries built on top of libraries built on top of other libraries written by someone else (who wrote some technical documentation you read).
+with libraries built on top of libraries built on top of other libraries written by someone else (who probably also wrote some technical documentation accompanying the code).
 That's just the nature of software.
 Many systems are just too complex for a single person to fully understand. So, like it or not, we must work in teams. And **to work
 effectively in a team, you must _communicate_ effectively**.
@@ -65,7 +65,7 @@ You may write an email to a colleague on the other side of the world, you may wr
 a technical document to describe your idea for an architectural design, and probably most commonly, you may describe the code changes you're
 proposing in a pull request.
 
-To get your ideas across clearly, all of these writing mediums require you to be a good writer. Regardless of what form your technical writing
+To get your ideas across clearly, all of these mediums require you to be a good writer. Regardless of what form your technical writing
 takes, it is an important skill to have as remote work continues to grow in popularity.
 
 **Blogging is one of the easiest ways to put in your 10,000 hours to achieve mastery**.
@@ -92,6 +92,11 @@ looking for, often the brief descriptions I left myself weren't the least bit he
 
 These days, when I run into tricky problems, I still make notes about them, but then shortly after, I try to write up a more in-depth personal wiki entry
 about them (especially the really tough ones). After a little bit of revision and clarification, many of those eventually find their way onto here as posts.
+
+<aside>
+    For notes these days, I've moved away from paper and pen. I really like
+    <a href="https://github.com/vimwiki/vimwiki">VimWiki</a>. Many of my colleagues seem to enjoy using <a href="https://obsidian.md/">Obsidian</a>.
+</aside>
 
 By taking the time to write up my notes as blog posts, I am re-enforcing what I have learned,
 and I've given myself a way to easily search for solutions to the problems I've already solved.
@@ -123,11 +128,11 @@ Finally, even after a short period of time, I feel like my communication skills 
 
 # What Next?
 
-I hope this post has started the process of convincing you to share your knowledge online, but you're probably left wondering where to start.
-If that's the case for you, I have started another post explaining how I got started with this website and all the options available for creating
+I hope this post has helped kickstart you into share your knowledge online, but you're probably left wondering where to start.
+If that's the case for you, I'm working on a follow-up post explaining how I got started with this website and all the options available for creating
 one for yourself.
 
 I'll update this post with a link once the next one is finished. In the meantime, bookmark this page to keep an eye out for the next post, or
 subscribe to my [RSS feed](/feed.xml) to get notified when it comes out.
 
-I'd love to hear your thoughts on blogging. Feel free to discuss in the comments section below.
+Are there some reasons I missed? Do you disagree? I'd love to hear your thoughts on blogging. Feel free to discuss in the comments section below.
