@@ -24,19 +24,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-    - name: Build
-      uses: helaili/jekyll-action@2.2.0
-      with:
-        # The Jekyll environment to build
-        jekyll_env: production
-        # Additional Jekyll build arguments (see https://jekyllrb.com/docs/configuration/options/#build-command-options)
-        jekyll_build_options: --drafts --unpublished --config _config.yml,_config.drafts.yml
-        # Will build the Jekyll site without publishing it
-        build_only: true
+      - name: Build
+        uses: helaili/jekyll-action@2.2.0
+        with:
+          # The Jekyll environment to build
+          jekyll_env: production
+          # Additional Jekyll build arguments (see https://jekyllrb.com/docs/configuration/options/#build-command-options)
+          jekyll_build_options: --drafts --unpublished --config _config.yml,_config.drafts.yml
+          # Will build the Jekyll site without publishing it
+          build_only: true
 
-        # Commands to run prior to build and deploy. Useful for ensuring build dependencies are up to date or installing  new dependencies. For example, use `apk --update add  imagemagick` to install ImageMagick.
-        # pre_build_commands: # optional
-      
+          # Commands to run prior to build and deploy. Useful for ensuring build dependencies are up to date or installing  new dependencies. For example, use `apk --update add  imagemagick` to install ImageMagick.
+          # pre_build_commands: # optional
+
       - name: S3 Sync
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
