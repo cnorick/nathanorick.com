@@ -98,7 +98,7 @@
     </a>
     <div class="trigger">
       <div class="trigger-container">
-        {%- assign url = page.url -%}
+        {%- assign url = page.url | relative_url -%}
         {%- assign menus = site.data.menus -%}
         {%- if menus %}
           {%- for menu in menus -%} 
@@ -126,8 +126,8 @@
             {%- endif -%} 
           {%- endfor -%}
         {%- else -%}
-          <a class="menu-link {% if url == '/' %}active{% endif %}" href="/">home</a>
-          <a class="menu-link {% if url == '/about/' %}active{% endif %}" href="/about">about</a>
+          <a class="menu-link {% if url == '/' %}active{% endif %}" href="{{site.baseurl}}">home</a>
+          <a class="menu-link {% if url == '/about/' %}active{% endif %}" href="{{'/about' | relative_url }}">about</a>
         {%- endif -%}
       </div>
     </div>

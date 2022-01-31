@@ -1,9 +1,9 @@
 ---
 title: All Tech Professionals Need a Blog
 tags:
- - Advice
- - Blogging
- - Opinion
+ - advice
+ - blogging
+ - opinion
 description: >-
     Technical writing isn't easy, but just like any other skill, mastery comes with experience. Here's why you should keep a technical blog,
     and all the ways doing so can help both you and others.

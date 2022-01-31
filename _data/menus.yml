@@ -1,5 +1,5 @@
 - title: home
-  url: /
+  link: index.md
   external: false
 
 - title: projects

@@ -89,7 +89,7 @@ Just copy this to your .gitconfig to start using git checkpoints:
 ```bash
   # Checkpoints allow you to get a commit hash for a WIP.
   # It's intended for when you'd like to mark progress to return to later, but don't yet want a full commit.
-  # See {{site.url}}{{page.url}} for more details.
+  # See {{page.url | absolute_url}} for more details.
   save = "!f() { git add -A && git commit --no-verify -m "\"SAVEPOINT - $@\""; }; f"
   undo = reset HEAD~1 --mixed
   checkpoint = "!f() { git save ${1-CHECKPOINT}; git tag "\"checkpoint/${1-`date +%Y_%m_%d_%H_%M_%S`}\""; git undo; }; f"
