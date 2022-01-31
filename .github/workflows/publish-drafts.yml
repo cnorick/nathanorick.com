@@ -23,15 +23,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
-
+        
+      - uses: actions/setup-ruby@v1
+      
+      - name: Install Gems
+        run: |
+          echo "Installing Gems"
+          bundle install
+      
       - name: Build
-        uses: fabacab/jekyll-builder-for-github-pages-action@v1 # Or whatever "@ref" you want.
-        env: 
-          JEKYLL_ENV: production        
-        with:
-          jekyll_build_opts: "--drafts --future --unpublished --config _config.yml,_config.drafts.yml"
-          # post_build_commands:
-          # pre_build_commands: # optional
+        run: |
+          echo "Building Jekyll Site"
+          jekyll build --drafts --future --unpublished --config _config.yml,_config.drafts.yml || echo "Build Failed"
 
       - name: S3 Sync
         uses: jakejarvis/s3-sync-action@v0.5.1
