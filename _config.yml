@@ -24,7 +24,7 @@ author:
   avatar: /assets/img/avatar.jpg # change with your own avatar
 
 # URL settings
-url: "https://nathanorick.com" #
+url: "https://nathanorick.com"
 baseurl: '/'
 permalink: /:title/
 google_analytics: UA-102148746-2
