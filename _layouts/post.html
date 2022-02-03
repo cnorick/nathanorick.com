@@ -18,11 +18,11 @@ layout: default
         </div>
         {% endif %}
         <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1>
-        {% unless page.published and site.time >= page.date %}
-          <!-- <div class="alert alert-warning">
+        {% if page.published == false or site.time <= page.date %}
+          <div class="alert alert-warning">
               <b>Page Not Published</b>
-          </div> -->
-        {% endunless %}
+          </div>
+        {% endif %}
         {% if page.date %}
         <div class="post-meta">
           <div class="date-and-author">
