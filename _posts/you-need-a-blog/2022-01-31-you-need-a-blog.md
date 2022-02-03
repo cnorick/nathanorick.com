@@ -1,5 +1,5 @@
 ---
-title: All Tech Professionals Need a Blog
+title: An Argument for Having Your Own Tech Blog
 tags:
  - advice
  - blogging
@@ -9,6 +9,7 @@ description: >-
     and all the ways doing so can help both you and others.
 image: idea.jpg
 published: true
+modified: 2022-02-03
 ---
 
 If you've read any of my posts, it's obvious I'm not much of a writer. I'm pretty comfortable and confident writing code; I just sit
