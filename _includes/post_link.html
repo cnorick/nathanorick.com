@@ -1,0 +1,6 @@
+{% capture expression %}item.id == '{{include.postId}}'{% endcapture -%}
+{%- assign post = site.posts | find_exp: "item", expression -%}
+{%- capture postUrl -%}
+    {{post.url}} {%- if include.anchor -%}#{{include.anchor}}{%- endif -%}
+{%- endcapture -%}
+<a href="{{postUrl}}">{{post.title}}</a>
