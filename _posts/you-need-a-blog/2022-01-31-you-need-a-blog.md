@@ -9,7 +9,7 @@ description: >-
     and all the ways doing so can help both you and others.
 image: idea.jpg
 published: true
-modified: 2022-02-03
+modified: 2022-06-09
 ---
 
 If you've read any of my posts, it's obvious I'm not much of a writer. I'm pretty comfortable and confident writing code; I just sit
@@ -133,11 +133,8 @@ Finally, even after a short period of time, I feel like my communication skills 
 
 # What Next?
 
-I hope this post has helped kickstart you into share your knowledge online, but you're probably left wondering where to start.
-If that's the case for you, I'm working on a follow-up post explaining how I got started with this website and all the options available for creating
-one for yourself.
-
-I'll update this post with a link once the next one is finished. In the meantime, bookmark this page to keep an eye out for the next post, or
-subscribe to my [RSS feed](/feed.xml) to get notified when it comes out.
+I hope this post has helped kickstart you into sharing your knowledge online, but you're probably left wondering where to start.
+If that's the case for you, I wrote a follow-up post about how to easily and cheaply make your own blog:
+{% include post_link.html postId="/copy-my-website" %}
 
 Are there some reasons I missed? Do you disagree? I'd love to hear your thoughts on blogging. Feel free to discuss in the comments section below.
