@@ -9,7 +9,7 @@ description: >-
     and all the ways doing so can help both you and others.
 image: idea.jpg
 published: true
-modified: 2022-06-09
+modified: 2022-06-10
 ---
 
 If you've read any of my posts, it's obvious I'm not much of a writer. I'm pretty comfortable and confident writing code; I just sit
@@ -129,12 +129,5 @@ It genuinely takes a decent bit of work to regularly make posts (I'm not even su
 you can call what I do regular), and the pay-off isn't immediately obvious. But I assure you, it is worth it in the long run. I refer to my own
 posts every now and then when I'm trying to re-solve a problem. Moreover, I do get _some_ visitors on the site, so I'm not the only one benefitting.
 Finally, even after a short period of time, I feel like my communication skills are starting to improve, and I actually find myself enjoying technical writing.
-
-
-# What Next?
-
-I hope this post has helped kickstart you into sharing your knowledge online, but you're probably left wondering where to start.
-If that's the case for you, I wrote a follow-up post about how to easily and cheaply make your own blog:
-{% include post_link.html postId="/copy-my-website" %}
 
 Are there some reasons I missed? Do you disagree? I'd love to hear your thoughts on blogging. Feel free to discuss in the comments section below.
