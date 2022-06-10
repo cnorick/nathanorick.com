@@ -12,7 +12,7 @@ published: true
 Do you remember that scene from _Willy Wonka and the Chocolate Factory_ where Wonka opens a door with a little organ in the wall? For some reason, that scene popped in my head the other day,
 and I couldn't rest until I had my own door-opening organ. With about half a day's work, I created the most impractical way to control your smart home.
 
-## Video of it in Action
+# Video of it in Action
 
 {% include video.html src="https://www.youtube.com/embed/ZR4HQgTMhCM"%}
 
