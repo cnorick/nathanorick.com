@@ -57,6 +57,7 @@ $on-widescreen: 1152px;
   --smoke: #{$smoke};
   --gray: #{$gray};
   --white: #{$white};
+  --background-color: #{$white};
 
   body[data-theme="dark"] {
     --text-base-color: #{$dark-text-base-color};
@@ -67,6 +68,7 @@ $on-widescreen: 1152px;
     --smoke: #{$dark-smoke};
     --gray: #{$dark-gray};
     --white: #{$dark-white};
+    --background-color: #{$dark-black};
   }
 }
 

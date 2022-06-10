@@ -24,23 +24,24 @@ aside {
 .link-summary-tooltip {
   position: relative;
   display: inline;
-  border-bottom: 1px dotted; /* If you want dots under the hoverable text */
+  border-bottom: 1px dotted;
 }
 
 .link-summary-tooltip-content {
   visibility: hidden;
   width: 500px;
-  background-color: var(--smoke);
+  background-color: var(--background-color);
+  border: 1px solid var(--smoke);
   color: var(--text-base-color);
   text-align: center;
   padding: 5px;
-  border-radius: 3px;
+  border-radius: 1px;
   display: flex;
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
   flex-direction: row;
   margin: 5px;
+  max-width: 80vw;
 }
 
 .link-summary-image {
