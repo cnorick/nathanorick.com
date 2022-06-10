@@ -20,3 +20,49 @@ aside {
         margin: 0;
     }
 }
+
+/* Tooltip container */
+.link-summary-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.link-summary-tooltip-content {
+  visibility: hidden;
+  width: 500px;
+  background-color: var(--smoke);
+  color: var(--text-base-color);
+  text-align: center;
+  padding: 5px;
+  border-radius: 3px;
+  display: flex;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  flex-direction: row;
+  margin: 5px;
+}
+
+.link-summary-image {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+}
+
+.link-summary-title-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-summary-description {
+    font-size: .7rem;
+    text-align: left;
+    margin-left: 1rem;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.link-summary-tooltip:hover + .link-summary-tooltip-content {
+  visibility: visible;
+}
