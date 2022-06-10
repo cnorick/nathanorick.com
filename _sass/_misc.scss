@@ -87,7 +87,7 @@ aside {
 
 .toc-expander {
     border: none;
-    margin-top: .3em;
+    margin: .3em .3em;
     cursor: pointer;
     &::after {
         content: '\02795';
