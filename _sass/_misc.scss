@@ -21,14 +21,12 @@ aside {
     }
 }
 
-/* Tooltip container */
 .link-summary-tooltip {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted; /* If you want dots under the hoverable text */
 }
 
-/* Tooltip text */
 .link-summary-tooltip-content {
   visibility: hidden;
   width: 500px;
@@ -62,7 +60,41 @@ aside {
     margin-left: 1rem;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
 .link-summary-tooltip:hover + .link-summary-tooltip-content {
   visibility: visible;
+}
+
+.toc-container {
+    border: 1px solid;
+}
+
+.toc-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.toc-title {
+    margin-left: 1rem;
+}
+
+.toc-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.toc-expander {
+    border: none;
+    margin-top: .3em;
+    cursor: pointer;
+    &::after {
+        content: '\02795';
+    }
+    .active & {
+        &::after {
+            content: '\2796';
+        }
+    }
 }
