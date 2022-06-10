@@ -6,7 +6,7 @@ tags:
  - piano
 description: One of the stupidest ways one could imagine to control a smart home, I hooked up my midi keyboard to Home Assistant
 image: keyboard-port.jpg
-published: false
+published: true
 ---
 
 Do you remember that scene from _Willy Wonka and the Chocolate Factory_ where Wonka opens a door with a little organ in the wall? For some reason, that scene popped in my head the other day,
