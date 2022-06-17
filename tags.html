@@ -5,7 +5,7 @@ layout: page
 excerpt: Sorted article by tags.
 ---
 
-{% assign allTags = site.documents | map: 'tags' | uniq | compact %}
+{% assign allTags = site.documents | map: 'tags' | uniq | compact | sort_natural%}
 <div class="archive-tags">
   <a class="tag-item" href="#">all</a>
   {%- for tag in allTags -%} 
