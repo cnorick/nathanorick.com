@@ -9,12 +9,12 @@ excerpt: Sorted article by tags.
 <div class="archive-tags">
   <a class="tag-item" href="#">all</a>
   {%- for tag in allTags -%} 
-    <a class="tag-item" href="#{{tag}}">{{ tag }}</a> 
+    <a class="tag-item" href="#{{tag | replace: ' ', '-'}}">{{ tag }}</a> 
   {%- endfor -%}
 </div>
 
 {%- for tag in allTags -%}
-  <h2 id="{{ tag }}">{{ tag | upcase }}</h2>
+  <h2 id="{{ tag | replace: ' ', '-' }}">{{ tag | upcase }}</h2>
   {% capture expression %}item.tags contains '{{tag}}'{% endcapture %}
   {% assign allDocsWithTag = site.documents | where_exp: "item", expression %}
   {%- for post in allDocsWithTag -%}
