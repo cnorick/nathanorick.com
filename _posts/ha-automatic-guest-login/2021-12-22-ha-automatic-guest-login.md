@@ -9,6 +9,10 @@ image: redirect_page.png
     <b>Disclaimer:</b>
     Bypassing Home Assistant's authentication is dangerous, and can introduce serious security risks. <a href="#a-note-on-security">More Info</a>
 </div>
+<div class="alert alert-primary">
+    <b>Update July 2022:</b>
+    Thanks to <a href="https://github.com/muddro1">muddro1</a>, you can now install this using a docker container. See the <a href="https://github.com/cnorick/ha-auto-guest-login">github page</a> for instructions.
+</div>
 
 # Why Guests Hate Home Assistant
 I often have family and friends over at my place, and almost every time they ask "How do I turn on the light?" or "What was
@@ -42,7 +46,7 @@ The whole sign-in process goes like this:
 To host my web server, I just used a Raspberry PI Zero I already had lying around. The server doesn't by any means need to be beefy, so almost anything will work. You could even run it on the same machine that hosts your Home Assistant instance.
 
 ## Getting the code
-The code for the project can be found on github [here](https://github.com/cnorick/ha-auto-guest-login). To get started, clone the repo onto the machine you plan to use as the web server.
+The code for the project can be found on [github](https://github.com/cnorick/ha-auto-guest-login). To get started, clone the repo onto the machine you plan to use as the web server.
 
 Following is the complete code for the web server. It uses [express](https://expressjs.com/) to handle both the request for the index.html file and the request for the redirect URL.
 
