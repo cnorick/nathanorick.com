@@ -8,7 +8,8 @@ home: true
 </main>
 {% if site.posts != empty %}
 <h3 class="posts-item-note" aria-label="Recent Posts">Recent Posts</h3>
-{% assign posts_and_projects = site.posts | concat: site.projects | sort: 'date' | reverse %}
+{% assign posts_and_projects = site.posts | concat: site.projects | where_exp: "post", "post.exclude_from_homepage !=
+true" | sort: 'date' | reverse %}
 {%- for post in posts_and_projects limit: site.number_of_posts -%}
 <article class="post-item">
   <span class="post-item-date">{{ post.date | date: "%b %d, %Y" }}</span>

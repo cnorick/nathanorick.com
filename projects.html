@@ -6,9 +6,10 @@ excerpt: All projects
 comments: false
 full_width: true
 ---
+{% assign projects = site.projects | where_exp: "post", "post.published != false and post.date <= site.time" %}
 
 <div class="project-container">
-  {%- for post in site.projects reversed -%}
+  {%- for post in projects reversed-%}
     <article class="project-item">
       <h3 class="project-title">
         <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>

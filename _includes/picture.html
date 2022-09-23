@@ -2,11 +2,13 @@
   {% if include.relative_path %} {{page.path | split: '/' | slice: 0, 2 | join: '/'}}/{{include.relative_path}} {% else %} {{include.path}} {% endif %}
 {%- endcapture -%}
 {%- capture image_url -%}
-  {% if include.relative_path %} {{page.url}}{{include.relative_path}} {% else %} {{include.path}} {% endif %}
+  {%- if include.relative_path -%} {{page.url}}{{include.relative_path}} {%- else -%} {{include.path}} {%- endif -%}
 {%- endcapture -%}
 
 {%- capture image_link -%}
-  {% if include.no_link != true %} --link {{image_url}} {% endif %}
+  {%- if include.no_link != true -%}
+    --link {{site.baseurl | split: '/' | join, '/' }}{{image_url}}
+  {%- endif -%}
 {%- endcapture -%}
 
 {% picture {{include.preset}} {{image_path}} {{include.crop}} {{include.altImagesAndCrop}} --alt {{include.alt}} {{image_link}} {{include.attributes}} %}
