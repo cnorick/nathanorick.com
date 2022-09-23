@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Install image packages
+        run: sudo apt install libvips libvips-dev
+
       - name: Build
         uses: jerryjvl/jekyll-build-action@v1
         env: 

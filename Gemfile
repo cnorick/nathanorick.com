@@ -25,6 +25,7 @@ group :jekyll_plugins do
   gem 'jekyll-postfiles', '~> 3.1'
   gem 'thor'
   gem 'stringex'
+  gem 'jekyll_picture_tag', '~> 2.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

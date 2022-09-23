@@ -23,7 +23,7 @@ when I start to write *about* the code, I'm stuck.
 You may be asking, "If you have such a hard time with technical writing, why on Earth are you torturing yourself by keeping a technical blog?".
 The short answer is that **if you don't practice a skill, you'll never get better at it**. For the longer answer, read on.
 
-![Idea: Image of a post it note of a drawn lightbulb](idea.jpg)
+{% include picture.html relative_path="idea.jpg" alt="Idea: Image of a post it note of a drawn lightbulb" %}
 <small>
     Photo by [AbsolutVision](https://unsplash.com/@freegraphictoday?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 </small>

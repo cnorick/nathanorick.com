@@ -43,6 +43,8 @@ kramdown:
   syntax_highlighter: rouge
   header_offset: 1
 
+picture:
+  output: assets/img/optimized/
 
 # Default front matter
 defaults:

@@ -184,12 +184,11 @@ I really wanted to limit what my guests were able to do in Home Assistant. Not j
 
 To make this easier, I created a separate dashboard for my guests. I named it `lovelace-guest`. You can do this from `/config/lovelace/dashboards`.
 
-![Dashboards](dashboards.png)
+{% include picture.html relative_path="dashboards.png" alt="Dashboards" %}
 
 After I created the dashboard, I only added controls for the things I thought my guests would actually need to control and disabled the account's access to all the other much more complicated dashboards and views.
 
-![Guest Dashboard](guest-dashboard.png)
-
+{% include picture.html relative_path="guest-dashboard.png" alt="Guest Dashboard" %}
 
 # Conclusion
 This setup has worked out really well for me and my guests, and I hope it can make your guests a little happier as well. If you have any questions or suggestions, please leave a comment

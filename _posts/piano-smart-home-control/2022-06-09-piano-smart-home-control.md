@@ -21,14 +21,14 @@ In this post, I'll talk about how I got it working and some of the things I lear
 # Hardware
 I already had the midi keyboard you see in the video. It's a Yamaha YPG-635. The first thing I did was pulled out the old manual to see how to connect it to a computer, and it turns out it's pretty simple.
 It just has a usb-B port in the back.
-![keyboard usb B port](keyboard-port.jpg)
+{% include picture.html relative_path="keyboard-port.jpg" alt="keyboard usb B port" %}
 
 Next, I decided I'd try to run the server on a Raspberry Pi 0 I had laying around. I didn't imagine I would need a ton of resources to process midi data.
-![raspberry pi 0](rpi0.jpg)
+{% include picture.html relative_path="rpi0.jpg" alt="raspberry pi 0" %}
 
 And that brings us to my first bump in the road. I needed a micro-usb to usb-B cord. Turns out those are tough to come by, and I certainly didn't have any in the house, so it was time to pull out the soldering iron.
 I found out it's actually pretty easy to splice usb cables. The usb-B adapter has 4 pins, and the micro-A adapter has 5. I just had to match up the colors and leave out the unused wire.
-![spliced usb](spliced-usb.jpg)
+{% include picture.html relative_path="spliced-usb.jpg" alt="spliced usb" %}
 
 # Discovering Midi Devices on Linux
 After a long time not being able to find my keyboard listed under `/dev` on the rpi, I resorted to testing each pin
@@ -36,10 +36,10 @@ on the usb cable with my multimeter. They were all ok! Then, to my surprise, whe
 
 Not only did it show up as a usb device, but Linux had also done the work of registering it as a midi device too. At that point, I was able to use one of the built-in sound tools to get
 some information about my device. I ran `aseqdump -l` and saw my piano listed in the output on port 20:
-![aseqdump](aseqdump-l.jpg)
+{% include picture.html relative_path="aseqdump-l.jpg" alt="aseqdump" %}
 
 After getting the port number, I ran `aseqdump --port=20`. I had data! It printed to the console every note I played:
-![aseqdump -p 20](aseqdump-p.png)
+{% include picture.html relative_path="aseqdump-p.png" alt="aseqdump -p 20" %}
 
 Now, just to write some code...
 
