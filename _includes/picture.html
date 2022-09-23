@@ -5,4 +5,8 @@
   {% if include.relative_path %} {{page.url}}{{include.relative_path}} {% else %} {{include.path}} {% endif %}
 {%- endcapture -%}
 
-{% picture {{include.preset}} {{image_path}} {{include.crop}} {{include.altImagesAndCrop}} --alt {{include.alt}} --link {{image_url}} {{include.attributes}} %}
+{%- capture image_link -%}
+  {% if include.no_link != true %} --link {{image_url}} {% endif %}
+{%- endcapture -%}
+
+{% picture {{include.preset}} {{image_path}} {{include.crop}} {{include.altImagesAndCrop}} --alt {{include.alt}} {{image_link}} {{include.attributes}} %}
