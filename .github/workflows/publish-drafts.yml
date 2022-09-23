@@ -23,6 +23,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Install image packages
+        run: sudo apt install libvips libvips-dev
         
       - uses: actions/setup-ruby@v1
       
