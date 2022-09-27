@@ -26,3 +26,12 @@ presets:
         speed: 8
     data_sizes: true
     keep: attention
+    nomarkdown: false
+
+  gallery:
+    base_width: 250
+    pixel_ratios: [1]
+    fallback_width: 250
+    formats: [webp, original]
+    keep: attention
+    nomarkdown: false

@@ -1,4 +1,4 @@
-{%- capture image_path -%}
+{% capture image_path -%}
   {% if include.relative_path %} {{page.path | split: '/' | slice: 0, 2 | join: '/'}}/{{include.relative_path}} {% else %} {{include.path}} {% endif %}
 {%- endcapture -%}
 {%- capture image_url -%}
@@ -11,4 +11,20 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{% picture {{include.preset}} {{image_path}} {{include.crop}} {{include.altImagesAndCrop}} --alt {{include.alt}} {{image_link}} {{include.attributes}} %}
+{%- capture alt_text -%}
+  {%- if include.alt -%}
+    --alt {{include.alt}}
+  {%- endif -%}
+{%- endcapture -%}
+
+{% assign image_ext = image_path | split: '.' | last | strip %}
+
+<div class="picture-container">
+  {% picture {{include.preset}} {{image_path}} {{include.crop}} {{include.altImagesAndCrop}} {{alt_text}} {{image_link}} {{include.attributes}} %}
+
+  {% if image_ext == 'gif' %}
+    <div class="play-button">
+      <img src="{{'/assets/img/play-icon.svg' | relative_url}}" />
+    </div>
+  {% endif %}
+</div>

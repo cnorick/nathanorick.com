@@ -26,7 +26,7 @@ so much work into).
 With the setup I'll explain in this post, my guests can now simply scan a QR code and immediately have access to the guest
 account on my Home Assistant instance.
 
-![Demo of my welcome page](welcome-demo.gif)
+{% include picture.html relative_path="welcome-demo.gif" alt="Demo of my welcome page" %}
 
 # Setup and How it Works
 The setup to make this work is pretty straightforward. It only requires a web server sitting somewhere on your local network

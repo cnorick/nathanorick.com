@@ -99,3 +99,37 @@ aside {
         }
     }
 }
+
+.picture-container {
+  position: relative;
+  width: fit-content;
+
+  .play-button {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+    z-index: 1;
+    opacity: .7;
+    border-radius: 139px;
+    background: gray;
+    pointer-events: none;
+    transition: all .5s;
+
+    img {
+        filter: invert(99%) sepia(2%) saturate(662%) hue-rotate(268deg) brightness(111%) contrast(73%);
+    }
+  }
+
+  &:hover .play-button,
+  &:active .play-button,
+  &:focus .play-button {
+    box-shadow: 0px 0px 10px 5px var(--text-link-blue-active);
+    width: 100px;
+    height: 100px;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    transition: all .5s;
+  }
+}
