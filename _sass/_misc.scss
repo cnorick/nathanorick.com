@@ -102,7 +102,11 @@ aside {
 
 .picture-container {
   position: relative;
-  width: fit-content;
+
+  &.gif-container {
+    cursor: pointer;
+    width: fit-content;
+  }
 
   .play-button {
     position: absolute;
@@ -114,8 +118,10 @@ aside {
     opacity: .7;
     border-radius: 139px;
     background: gray;
-    pointer-events: none;
-    transition: all .5s;
+    transition: all .5s; 
+    margin: 0;
+    padding: 0;
+    border: none;
 
     img {
         filter: invert(99%) sepia(2%) saturate(662%) hue-rotate(268deg) brightness(111%) contrast(73%);

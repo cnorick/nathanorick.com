@@ -26,8 +26,17 @@ jobs:
       - name: Install image packages
         run: sudo apt install libvips libvips-dev
 
+      - uses: actions/setup-ruby@v1
+      
+      - name: Install Gems
+        run: |
+          echo "Installing Gems"
+          bundle install
+      
       - name: Build
-        uses: jerryjvl/jekyll-build-action@v1
+        run: |
+          echo "Building Jekyll Site"
+          jekyll build || echo "Build Failed"
         env: 
           JEKYLL_ENV: production
       

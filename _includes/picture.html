@@ -5,9 +5,11 @@
   {%- if include.relative_path -%} {{page.url}}{{include.relative_path}} {%- else -%} {{include.path}} {%- endif -%}
 {%- endcapture -%}
 
+{% assign image_ext = image_path | split: '.' | last | strip %}
+
 {%- capture image_link -%}
-  {%- if include.no_link != true -%}
-    --link {{site.baseurl | split: '/' | join, '/' }}{{image_url}}
+  {%- if include.no_link != true and (image_ext != 'gif' or include.add_gif_link) -%}
+    --link {{site.baseurl | split: '/' | join: '/' }}{{image_url}}
   {%- endif -%}
 {%- endcapture -%}
 
@@ -17,14 +19,15 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{% assign image_ext = image_path | split: '.' | last | strip %}
-
-<div class="picture-container">
-  {% picture {{include.preset}} {{image_path}} {{include.crop}} {{include.altImagesAndCrop}} {{alt_text}} {{image_link}} {{include.attributes}} %}
+<div class="picture-container {% if image_ext == 'gif' -%} gif-container {%- endif %}"
+ {% if include.add_gif_link %} data-ignore-click="true" {% endif %}
+>
+  {% picture {{include.preset}} {{image_path}} {{include.crop}} {{include.altImagesAndCrop}} {{alt_text}} {{image_link}}
+  {{include.attributes}} --picture data-full-source="{{site.baseurl | split: '/' | join: '/' }}{{image_url}}" %}
 
   {% if image_ext == 'gif' %}
-    <div class="play-button">
-      <img src="{{'/assets/img/play-icon.svg' | relative_url}}" />
-    </div>
+    <button class="play-button">
+      <img src="{{'/assets/img/play-icon.svg' | relative_url}}"/>
+    </button>
   {% endif %}
 </div>

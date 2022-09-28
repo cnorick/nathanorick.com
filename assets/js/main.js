@@ -93,4 +93,37 @@
       }, fourSeconds);
     });
   });
+
+  // Play Gif
+  const gifs = document.querySelectorAll('.gif-container');
+  gifs.forEach(gif => {
+    if (gif.dataset.ignoreClick) return;
+    
+    const playButton = gif.getElementsByClassName('play-button')[0];
+    const picEl = gif.getElementsByTagName('picture')[0];
+
+    gif.addEventListener('click', () => {
+      const wasPlaying = gif.dataset.playing == "true";
+      gif.dataset.playing = !wasPlaying;
+      if (!wasPlaying) {
+        playButton.remove();
+      }
+      else {
+        gif.appendChild(playButton);
+      }
+
+      const img = document.createElement('img');
+      if (gif.dataset.oldSource) {
+        img.src = gif.dataset.oldSource;  
+        const oldImg = gif.getElementsByTagName('img')[0];
+        gif.dataset.oldSource = oldImg.src;
+        oldImg.replaceWith(img);
+        return;
+      }
+
+      img.src = picEl.dataset.fullSource;
+      gif.dataset.oldSource = picEl.getElementsByTagName('img')[0].src;
+      picEl.replaceWith(img);
+    });
+  });
 })();
