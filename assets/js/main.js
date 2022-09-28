@@ -124,7 +124,7 @@
       }
 
       else {
-        newImg.src = picEl.dataset.fullSource;
+        newImg.src = gif.dataset.fullSource;
         gif.dataset.oldSource = oldImg.src;
         picEl.replaceWith(newImg);
       }

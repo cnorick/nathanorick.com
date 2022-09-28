@@ -20,10 +20,11 @@
 {%- endcapture -%}
 
 <div class="picture-container {% if image_ext == 'gif' -%} gif-container {%- endif %}"
- {% if include.add_gif_link %} data-ignore-click="true" {% endif %}
+  {% if include.add_gif_link %} data-ignore-click="true" {% endif %}
+  data-full-source="{{site.baseurl | split: '/' | join: '/' }}{{image_url}}"
 >
   {% picture {{include.preset}} {{image_path}} {{include.crop}} {{include.altImagesAndCrop}} {{alt_text}} {{image_link}}
-  {{include.attributes}} --picture data-full-source="{{site.baseurl | split: '/' | join: '/' }}{{image_url}}" %}
+  {{include.attributes}} %}
 
   {% if image_ext == 'gif' %}
     <button class="play-button">
