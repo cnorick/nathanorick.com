@@ -104,6 +104,11 @@
 
     gif.addEventListener('click', () => {
       const wasPlaying = gif.dataset.playing == "true";
+      const oldImg = gif.getElementsByTagName('img')[0];
+      const newImg = document.createElement('img');
+      newImg.width = oldImg.width;
+      newImg.height = oldImg.height;
+
       gif.dataset.playing = !wasPlaying;
       if (!wasPlaying) {
         playButton.remove();
@@ -112,18 +117,17 @@
         gif.appendChild(playButton);
       }
 
-      const img = document.createElement('img');
       if (gif.dataset.oldSource) {
-        img.src = gif.dataset.oldSource;  
-        const oldImg = gif.getElementsByTagName('img')[0];
+        newImg.src = gif.dataset.oldSource;  
         gif.dataset.oldSource = oldImg.src;
-        oldImg.replaceWith(img);
-        return;
+        oldImg.replaceWith(newImg);
       }
 
-      img.src = picEl.dataset.fullSource;
-      gif.dataset.oldSource = picEl.getElementsByTagName('img')[0].src;
-      picEl.replaceWith(img);
+      else {
+        newImg.src = picEl.dataset.fullSource;
+        gif.dataset.oldSource = oldImg.src;
+        picEl.replaceWith(newImg);
+      }
     });
   });
 })();
