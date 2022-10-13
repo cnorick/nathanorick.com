@@ -1,1 +1,1 @@
-EKYLL_ENV=production bundle exec jekyll serve --livereload
+JEKYLL_ENV=production bundle exec jekyll serve --livereload
