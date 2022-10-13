@@ -3,7 +3,7 @@ title: How I Built My Halloween Candy Machine
 tags:
  - [game, hardware, python]
 description: I made a machine for dispensing candy to trick-or-treaters this Halloween
-image: assets/img/halloween-machine.jpg
+image: halloween-machine.jpg
 gallery_folder: gallery
 published: true
 ---
