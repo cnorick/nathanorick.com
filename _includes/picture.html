@@ -9,7 +9,7 @@
 
 {%- capture image_link -%}
   {%- if include.no_link != true and (image_ext != 'gif' or include.add_gif_link) -%}
-    --link {{site.baseurl | split: '/' | join: '/' }}{{image_url}}
+    --link {{image_url | absolute_url}}
   {%- endif -%}
 {%- endcapture -%}
 

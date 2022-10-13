@@ -3,9 +3,9 @@ title: How I Built My Halloween Candy Machine
 tags:
  - [game, hardware, python]
 description: I made a machine for dispensing candy to trick-or-treaters this Halloween
-image:
+image: assets/img/halloween-machine.jpg
 gallery_folder: gallery
-published: false
+published: true
 ---
 
 Our neighborhood is very popular on Halloween. Last year, we found ourselves completely under-prepared when we ran out of candy within an hour. Of course, we couldn't stay at our house and face trick-or-treaters with no candy, so we decided to go for a walk.
