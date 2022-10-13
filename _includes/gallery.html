@@ -1,0 +1,21 @@
+{%- capture gallery_folder -%}
+  {%- if include.relative_folder -%} {{page.path | split: '/' | slice: 0, 2 | join: '/'}}/{{include.relative_folder}} {%- else -%} {{include.folder}} {%- endif -%}
+{%- endcapture -%}
+{% capture whereExp %} file.path contains '{{gallery_folder}}'{% endcapture %}
+{% assign images = site.static_files | where_exp: "file", whereExp %}
+
+<link rel="stylesheet" href="{{ '/assets/css/gallery.css' | relative_url }}" />
+
+{% assign header = include.title | default: "Gallery" %}
+<h2 id="{{header | downcase | replace: ' ', '-'}}">{{header}}</h2>
+<div class="gallery">
+  {% for image in images %}
+    {% if include.relative_folder %}
+      {%- capture relative_path -%} {{include.relative_folder}}/{{image.basename}}{{image.extname}} {%- endcapture -%}
+      {% include picture.html relative_path=relative_path preset="gallery" add_gif_link=true %}
+    {% else %}
+      {%- capture image_path -%} {{gallery_folder}}{{image.basename}}{{image.extname}} {%- endcapture -%}
+      {% include picture.html path=image_path preset="gallery" add_gif_link=true %}
+    {% endif %}
+  {% endfor %}
+</div>

@@ -35,3 +35,5 @@ presets:
     formats: [webp, original]
     keep: attention
     nomarkdown: false
+    attributes:
+      img: 'loading="lazy"'
