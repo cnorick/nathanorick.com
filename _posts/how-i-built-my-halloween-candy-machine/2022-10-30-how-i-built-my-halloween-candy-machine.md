@@ -1,16 +1,18 @@
 ---
 title: How I Built My Halloween Candy Machine
 tags:
- - [game, hardware, python]
+  - game
+  - hardware
+  - python
 description: I made a machine for dispensing candy to trick-or-treaters this Halloween
 image: halloween-machine.jpg
 gallery_folder: gallery
 published: true
 ---
 
-Our neighborhood is very popular on Halloween. Last year, we found ourselves completely under-prepared when we ran out of candy within an hour. Of course, we couldn't stay at our house and face trick-or-treaters with no candy, so we decided to go for a walk.
+Our neighborhood is very popular on Halloween, so last year, we found ourselves completely under-prepared when we ran out of candy within an hour. Of course, we couldn't stay at our house and face trick-or-treaters with no candy, so we decided, instead, to go for a walk.
 
-As we walked, one thing I saw a lot of was people sitting on their porches dropping candy to kids through PVC pipes. Since we were still in the pandemic, this allowed folks to give out candy while staying distanced from others. Watching how much the kids loved the novelty of candy being dropped through a pipe sparked an idea for me. What if I automated the whole candy-giving-out process and sort of turned it into a game? After a full year of designing and building, I finally finished this machine to do just that.
+As we walked on Halloween night, one thing we kept seeing was folks sitting on their porches dropping candy to kids through PVC pipes. Since pandemic was still going strong, this allowed folks to give out candy while staying distanced from others. Watching how much the kids loved the novelty of candy being dropped through a pipe sparked an idea for me. What if I automated the whole candy-giving-out process and sort of turned it into a game? After a full year of designing and building, I finally finished this machine to do just that.
 
 {% include video.html src="https://www.youtube.com/embed/fchGsu-fy-E"%}
 
@@ -19,13 +21,13 @@ In this post, I'll break down the steps I took to create this machine. If you're
 -----
 
 # Hardware
-As a software developer, the hardest part of this whole thing was designing and creating the physical components -- that's *all* the physical parts, not just the circuitry. The real challenge, the thing I spent the majority of my time on, was designing a physical mechanism to reliably and consistently deliver the same amount of candy every time it is activated.
+As a software developer, the hardest part of this whole thing was designing and creating the physical components -- that's _all_ the physical parts, not just the circuitry. The real challenge, the thing I spent the majority of my time on, was designing a physical mechanism to reliably and consistently deliver the same amount of candy every time it's activated.
 
 ## Delivery Mechanism
 For months, I pursued an idea that just didn't work out, trying to fine-tune something that just couldn't work (you can see some of the videos and images of the failed design [in the gallery below](#gallery)).
 Then, right as I was about to give up for good, my wife gave me a great suggestion: use a fan.
 
-The idea is actually pretty straight-forward. You just load candy into a PVC pipe mounted at an angle and block the end with a fan blade that can be moved by a motor. Here is the 3D print of my first iteration of this idea in action:
+The idea is actually pretty straight-forward. You just load candy into a PVC pipe mounted at an angle and block the end with a fan blade that can be moved by a motor. Here is my first iteration of this idea in action:
 {% include picture.html relative_path="fan.gif" alt="Gif of fan running to distribute candy" %}
 <br/>
 {% include picture.html relative_path="fan-diagram.jpg" alt="Whiteboard drawing of the dimensions of the fan. It includes measurements in inches and degrees" %}
@@ -47,13 +49,13 @@ I found this button on [adafruit](https://www.adafruit.com/product/1185) and it'
 
 ## Motors / Microswitches
 The hard thing about stepper motors is you have no way of knowing what position they are in at any given time. You _can_ control how far they spin and try keep track of their current position that way. BUT, if something ever momentarily blocks them from spinning,
-your recorded position will get off.
+your recorded position in the software will be wrong.
 
-To fix this, I redesigned my fan to have little bumps on the shaft. Then, I mounted a microswitch under the fan with the actuator touching the shaft. So now, when the fan spins, the bumps on the fan's shaft activate the microswitch, telling the Raspberry PI whether or not one of the blades is blocking the pipe.
+To fix this, I redesigned my fan to have little bumps on the shaft. Then, I mounted a microswitch under the fan with the actuator touching the shaft. So now, when the fan spins, the bumps on the fan's shaft activate the microswitch, telling the Raspberry PI whether or not one of the blades is blocking the candy from sliding out of the pipe.
 {% include picture.html relative_path="microswitch.gif" alt="Gif of fan running and activating the microswitch mounted under it" %}
 
 ## Hardware Circuit
-I'm certainly not a expert at circuit design, so don't judge my work. This project was complicated enough that I drew up a simple diagram before I soldered everything together on a perfboard, just so I wouldn't lose track of where everything connected.
+I'm certainly not a expert at circuit design, so don't judge my work. This project was complicated enough that I drew up a simple diagram before I soldered everything together on a perfboard, just so I wouldn't lose track of where everything was supposed to connect.
 {% include picture.html relative_path="circuit-diagram.jpg" alt="A circuit diagram including the button, the motors, and the rpi" %}
 <br/>
 {% include picture.html relative_path="hand-drawn-circuit.jpg" alt="A hand-drawn circuit diagram to help lay the circuit out on the perfboard" %}
@@ -78,12 +80,19 @@ I created a facade with a cut-out for the screen and the button to hide all of t
 With the facade finished, I made a small wooden frame for the back, and covered everything else up with black fabric, leaving myself a flap to open if something were to go wrong with the hardware on Halloween night.
 {% include picture.html relative_path="fabric.jpg" alt="The facade has now been removed, and the rest of the machine is covered with black fabric" %}
 
-After prettifying the outside, I took some time to add some quality-of-life improvements to the software. I bought a wireless keyboard to have handy as the machine is running.
-Then, I set up keyboard shortcuts to spin the wheel, to lower and raise the music volume, to skip or repeat songs, and just in case candy were to get stuck on Halloween, I added a
-shortcut to manually activate each motor. Each one has a regular mode that spins like normal to drop extra candy, as well as a slow mode that provides more torque in case there is ever
+After prettifying the outside, I took some time to add some quality-of-life improvements to the software. I bought a wireless keyboard to have handy while the machine is running.
+I set up keyboard shortcuts to spin the wheel, to lower and raise the music volume, to skip or repeat songs, and just in case candy were to get stuck on Halloween, I added
+shortcuts to manually activate each motor. Each one has a regular mode that spins like normal to drop extra candy, as well as a slow mode that provides more torque in case there is ever
+
 something blocking the fan.
 
 Also, related to software, I did a a little work in systemd on the PI to have the game start on boot. That way, you just need to plug it in to get started.
+
+# Final Thoughts
+This was certainly the largest scoped project I've ever take on. I had to learn quite a few new skills (3D design is not easy), and trial-and-error multiple ideas. But in the end,
+I think it was worth all the work.
+
+Definitely check out the image gallery and other resources below, and if you have any ideas of what I should add for next year, let me know in the comments at the bottom of the page.
 
 # Resources
 - [Code on Github](https://github.com/cnorick/halloween_dispenser_public)
