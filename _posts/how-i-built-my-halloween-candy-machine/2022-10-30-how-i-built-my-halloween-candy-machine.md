@@ -12,7 +12,7 @@ published: true
 
 Our neighborhood is very popular on Halloween, so last year, we found ourselves completely under-prepared when we ran out of candy within an hour. Of course, we couldn't stay at our house and face trick-or-treaters with no candy, so we decided, instead, to go for a walk.
 
-As we walked on Halloween night, one thing we kept seeing was folks sitting on their porches dropping candy to kids through PVC pipes. Since pandemic was still going strong, this allowed folks to give out candy while staying distanced from others. Watching how much the kids loved the novelty of candy being dropped through a pipe sparked an idea for me. What if I automated the whole candy-giving-out process and sort of turned it into a game? After a full year of designing and building, I finally finished this machine to do just that.
+As we walked on Halloween night, one thing we kept seeing was folks sitting on their porches dropping candy to kids through PVC pipes. Since the pandemic was still going strong, this allowed them to give out candy while staying distanced from others. Watching how much the kids loved the novelty of candy being dropped through a pipe sparked an idea for me. What if I automated the whole candy-giving-out process and sort of turned it into a game? After a full year of designing and building, I finally finished this machine to do just that.
 
 {% include video.html src="https://www.youtube.com/embed/fchGsu-fy-E"%}
 
@@ -83,13 +83,12 @@ With the facade finished, I made a small wooden frame for the back, and covered 
 After prettifying the outside, I took some time to add some quality-of-life improvements to the software. I bought a wireless keyboard to have handy while the machine is running.
 I set up keyboard shortcuts to spin the wheel, to lower and raise the music volume, to skip or repeat songs, and just in case candy were to get stuck on Halloween, I added
 shortcuts to manually activate each motor. Each one has a regular mode that spins like normal to drop extra candy, as well as a slow mode that provides more torque in case there is ever
-
 something blocking the fan.
 
 Also, related to software, I did a a little work in systemd on the PI to have the game start on boot. That way, you just need to plug it in to get started.
 
 # Final Thoughts
-This was certainly the largest scoped project I've ever take on. I had to learn quite a few new skills (3D design is not easy), and trial-and-error multiple ideas. But in the end,
+This was certainly the largest scoped project I've ever taken on. I had to learn quite a few new skills (3D design is not easy) and throw away multiple ideas through trial-and-error. But in the end,
 I think it was worth all the work.
 
 Definitely check out the image gallery and other resources below, and if you have any ideas of what I should add for next year, let me know in the comments at the bottom of the page.
