@@ -6,7 +6,7 @@ tags: [project, hardware, python]
 description: A machine I created to dispense candy to trick-or-treaters
 image: assets/img/halloween-machine.jpg
 exclude_from_homepage: true
-published: false
+published: true
 ---
 
 {% include picture.html path=page.image crop='16:12 entropy'%}
