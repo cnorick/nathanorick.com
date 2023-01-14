@@ -30,8 +30,8 @@ account on my Home Assistant instance.
 {% include picture.html relative_path="welcome-demo.gif" alt="Demo of my welcome page" %}
 
 # Updated: Install the Add-On
-Back when I first published this post, I'd only hacked all this together so that I could reduce the friction for my guests to use home assistant.
-I didn't expect it to be such a popular topic with other home assistant users.
+Back when I first published this post, I'd only hacked all this together so that I could reduce the friction for my guests to use Home Assistant.
+I didn't expect it to be such a popular topic for other Home Assistant users.
 So, in the spirit of further reducing friction, I've wrapped this up in a nice, convenient Add-On. Now, it's completely painless to get this running in your own house.
 
 You can get started by clicking the following button. Or, for more information, check out the project [README](https://github.com/cnorick/ha-auto-guest-login/blob/main/ha-auto-guest-login/README.md) on github.
