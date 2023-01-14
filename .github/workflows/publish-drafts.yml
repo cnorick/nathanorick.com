@@ -37,7 +37,7 @@ jobs:
       - name: Build
         run: |
           echo "Building Jekyll Site"
-          jekyll build --drafts --future --unpublished --config _config.yml,_config.drafts.yml || echo "Build Failed"
+          jekyll build --drafts --future --unpublished --config _config.yml,_config.drafts.yml
 
       - name: S3 Sync
         uses: jakejarvis/s3-sync-action@v0.5.1
