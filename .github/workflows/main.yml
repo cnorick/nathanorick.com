@@ -37,7 +37,7 @@ jobs:
       - name: Build
         run: |
           echo "Building Jekyll Site"
-          jekyll build || echo "Build Failed"
+          jekyll build
         env: 
           JEKYLL_ENV: production
       
