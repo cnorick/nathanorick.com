@@ -1,0 +1,4 @@
+<a class="github-button" href="https://github.com/{{include.user}}/{{include.repo}}"
+    data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="{%- unless include.standard_icon -%} octicon-star {%- endunless -%}"
+    {% if include.size == 'large' %} data-size="large" {% endif %} data-show-count="{{include.show_count | default: 'false'}}"
+    aria-label="Star {{include.user}}/{{include.repo}} on GitHub">{{ include.text | default: 'Star' }}</a>
