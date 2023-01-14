@@ -1,8 +1,9 @@
 ---
 title: The Completely Frictionless Way to Let Guests Use Home Assistant
-tags: [home assistant]
-description: Don't make guests download the home assistant app and use log in with guest credentials. Do all the hard work yourself and just share a QR code.
+tags: [home assistant, add-on, smart home]
+description: Don't make guests download the home assistant app and use log in with guest credentials. Let this Add-On do all the hard work and just share a QR code.
 image: redirect_page.png
+modified: 2023-01-14
 ---
 
 <div class="alert alert-warning">
@@ -10,8 +11,8 @@ image: redirect_page.png
     Bypassing Home Assistant's authentication is dangerous, and can introduce serious security risks. <a href="#a-note-on-security">More Info</a>
 </div>
 <div class="alert alert-primary">
-    <b>Update July 2022:</b>
-    Thanks to <a href="https://github.com/muddro1">muddro1</a>, you can now install this using a docker container. See the <a href="https://github.com/cnorick/ha-auto-guest-login">github page</a> for instructions.
+    <b>Update January 2023:</b>
+    You can now install this as a Home Assistant Add-On. Skip to <a href="#updated-install-the-add-on">the update section</a> to learn how.
 </div>
 
 # Why Guests Hate Home Assistant
@@ -27,6 +28,22 @@ With the setup I'll explain in this post, my guests can now simply scan a QR cod
 account on my Home Assistant instance.
 
 {% include picture.html relative_path="welcome-demo.gif" alt="Demo of my welcome page" %}
+
+# Updated: Install the Add-On
+Back when I first published this post, I'd only hacked all this together so that I could reduce the friction for my guests to use home assistant.
+I didn't expect it to be such a popular topic with other home assistant users.
+So, in the spirit of further reducing friction, I've wrapped this up in a nice, convenient Add-On. Now, it's completely painless to get this running in your own house.
+
+You can get started by clicking the following button. Or, for more information, check out the project [README](https://github.com/cnorick/ha-auto-guest-login/blob/main/ha-auto-guest-login/README.md) on github.
+
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fcnorick%2Fha-auto-guest-login)
+
+Also, while it's not completely necessary for setting up the add-on, I encourage you to read the rest of the post to better understand how the add-on works under the hood
+as well as to get some more ideas for making your smart home better for guests.
+
+If you like this project, please be sure to give it a star on GitHub and share it with other Home Assistant enthusiasts you might know.
+
+{% include github_star_button.html user="cnorick" repo="ha-auto-guest-login" size="large" show_count="true" text="Star the Project on GitHub"%}
 
 # Setup and How it Works
 The setup to make this work is pretty straightforward. It only requires a web server sitting somewhere on your local network
@@ -189,6 +206,11 @@ To make this easier, I created a separate dashboard for my guests. I named it `l
 After I created the dashboard, I only added controls for the things I thought my guests would actually need to control and disabled the account's access to all the other much more complicated dashboards and views.
 
 {% include picture.html relative_path="guest-dashboard.png" alt="Guest Dashboard" %}
+
+### Create QR Codes
+I think it's really convenient to leave my guests a QR code to scan to access Home Assistant. Even better, if you have access to a 3D printer, it's really cool to print a 3D QR code that you can leave somewhere convenient
+like a guest bedroom. I absolutely love [QR2STL](https://printer.tools/qrcode2stl/). You can give the site the link to your ha-guest-auto-login server, and it will create an STL file to 3D print the QR code. It'll even let you
+leave a blank space in the middle of the print to place an NFC chip so that guests can just touch it with their phone to be redirected to Home Assistant.
 
 # Conclusion
 This setup has worked out really well for me and my guests, and I hope it can make your guests a little happier as well. If you have any questions or suggestions, please leave a comment
