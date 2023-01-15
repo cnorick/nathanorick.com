@@ -37,6 +37,7 @@ So, in the spirit of further reducing friction, I've wrapped this up in a nice, 
 You can get started by clicking the following button. Or, for more information, check out the project [README](https://github.com/cnorick/ha-auto-guest-login/blob/main/ha-auto-guest-login/README.md) on github.
 
 [![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fcnorick%2Fha-auto-guest-login)
+{: class="centered"}
 
 Also, while it's not completely necessary for setting up the add-on, I encourage you to read the rest of the post to better understand how the add-on works under the hood
 as well as to get some more ideas for making your smart home better for guests.
@@ -44,6 +45,7 @@ as well as to get some more ideas for making your smart home better for guests.
 If you like this project, please be sure to give it a star on GitHub and share it with other Home Assistant enthusiasts you might know.
 
 {% include github_star_button.html user="cnorick" repo="ha-auto-guest-login" size="large" show_count="true" text="Star the Project on GitHub"%}
+{: class="centered"}
 
 # Setup and How it Works
 The setup to make this work is pretty straightforward. It only requires a web server sitting somewhere on your local network
