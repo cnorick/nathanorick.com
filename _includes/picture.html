@@ -1,34 +1,33 @@
 {% capture image_path -%}
-  {% if include.relative_path %} {{page.path | split: '/' | slice: 0, 2 | join: '/'}}/{{include.relative_path}} {% else %} {{include.path}} {% endif %}
+{% if include.relative_path %} {{page.path | split: '/' | slice: 0, 2 | join: '/'}}/{{include.relative_path}} {% else %}
+{{include.path}} {% endif %}
 {%- endcapture -%}
 {%- capture image_url -%}
-  {%- if include.relative_path -%} {{page.url}}{{include.relative_path}} {%- else -%} {{include.path}} {%- endif -%}
+{%- if include.relative_path -%} {{page.url}}{{include.relative_path}} {%- else -%} {{include.path}} {%- endif -%}
 {%- endcapture -%}
 
 {% assign image_ext = image_path | split: '.' | last | strip %}
 
 {%- capture image_link -%}
-  {%- if include.no_link != true and (image_ext != 'gif' or include.add_gif_link) -%}
-    --link {{image_url | absolute_url}}
-  {%- endif -%}
+{%- if include.no_link != true and (image_ext != 'gif' or include.add_gif_link) -%}
+--link {{image_url | absolute_url}}
+{%- endif -%}
 {%- endcapture -%}
 
 {%- capture alt_text -%}
-  {%- if include.alt -%}
-    --alt {{include.alt}}
-  {%- endif -%}
+{%- if include.alt -%}
+--alt {{include.alt}}
+{%- endif -%}
 {%- endcapture -%}
 
-<div class="picture-container {% if image_ext == 'gif' -%} gif-container {%- endif %}"
-  {% if include.add_gif_link %} data-ignore-click="true" {% endif %}
-  data-full-source="{{site.baseurl | split: '/' | join: '/' }}{{image_url}}"
->
+<div class="picture-container {% if image_ext == 'gif' -%} gif-container {%- endif %}" {% if include.add_gif_link %}
+  data-ignore-click="true" {% endif %} data-full-source="{{site.baseurl | split: '/' | join: '/' }}{{image_url}}">
   {% picture {{include.preset}} {{image_path}} {{include.crop}} {{include.altImagesAndCrop}} {{alt_text}} {{image_link}}
   {{include.attributes}} %}
 
   {% if image_ext == 'gif' %}
-    <button class="play-button">
-      <img src="{{'/assets/img/play-icon.svg' | relative_url}}"/>
-    </button>
+  <button class="play-button">
+    <img src="{{'/assets/img/play-icon.svg' | relative_url}}" />
+  </button>
   {% endif %}
 </div>
