@@ -14,7 +14,7 @@ wpm: 200 # default words per minute for calculating reading time
 author:
   name: Nathan Orick # author name
   bio: >- # tell to the world
-    I'm a software engineer, I'm passionate about building things for the web, and of course, I love coffee <a href="https://www.buymeacoffee.com/cnathano">☕</a>.
+    I'm a software engineer, I'm passionate about building things for the web, and of course, I love coffee <a href="https://github.com/sponsors/cnorick">☕</a>.
   username: norick # general username
   github: cnorick # github username
   show_github_follower_count: true
@@ -25,7 +25,7 @@ author:
 
 # URL settings
 url: "https://nathanorick.com"
-baseurl: '/'
+baseurl: "/"
 permalink: /:title/
 google_analytics: UA-102148746-2
 fb_appid:
@@ -56,11 +56,11 @@ defaults:
       show_ads: false
       include_toc: false
   - scope:
-     type: "projects"
+      type: "projects"
     values:
       comments: false
   - scope:
-     type: "posts"
+      type: "posts"
     values:
       show_ads: true
       include_toc: true
