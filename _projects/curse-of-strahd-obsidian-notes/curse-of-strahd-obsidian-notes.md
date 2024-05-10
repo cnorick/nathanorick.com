@@ -1,7 +1,7 @@
 ---
 title: Curse of Strahd Obsidian Notes
 tags: [D&D, obsidian, Curse of Strahd]
-date: 2024-05-13
+date: 2024-05-10
 description: An obsidian vault with DM notes from our Curse of Strahd campaign and an accompanying website for handouts and session notes.
 image:
 published: true
