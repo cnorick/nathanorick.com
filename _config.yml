@@ -14,7 +14,7 @@ wpm: 200 # default words per minute for calculating reading time
 author:
   name: Nathan Orick # author name
   bio: >- # tell to the world
-    I'm a software engineer, I'm passionate about building things for the web, and of course, I love coffee <a href="https://github.com/sponsors/cnorick">☕</a>.
+    I'm a software engineer, I'm passionate about building things for the web, and of course, I love coffee <a href="./coffee">☕</a>.
   username: norick # general username
   github: cnorick # github username
   show_github_follower_count: true
