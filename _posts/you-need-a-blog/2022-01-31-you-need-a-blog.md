@@ -8,7 +8,7 @@ description: >-
     Technical writing isn't easy, but just like any other skill, mastery comes with experience. Here's why you should keep a technical blog,
     and all the ways doing so can help both you and others.
 image: idea.jpg
-published: true
+published: false
 modified: 2022-06-10
 ---
 
