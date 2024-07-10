@@ -26,7 +26,7 @@ author:
 # URL settings
 url: "https://nathanorick.com"
 baseurl: "/"
-permalink: /:title
+permalink: /:title/
 google_analytics: UA-102148746-2
 fb_appid:
 
@@ -34,7 +34,7 @@ fb_appid:
 collections:
   projects:
     output: true
-    permalink: /:collection/:title
+    permalink: /:collection/:title/
 
 # Markdown settings
 markdown: kramdown
