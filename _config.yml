@@ -1,7 +1,7 @@
 # Site settings
 title: Nathan Orick # site title
 description: >- # site description
-  A blog about web development, programming, and life.
+  A blog _mostly_ about web development and programming.
 lang: en-US # default lang
 timezone: America/New_York # set your timezone
 first_publish_date: 2021-09-02 # first publish date
@@ -26,7 +26,7 @@ author:
 # URL settings
 url: "https://nathanorick.com"
 baseurl: "/"
-permalink: /:title/
+permalink: /:title
 google_analytics: UA-102148746-2
 fb_appid:
 
@@ -34,7 +34,7 @@ fb_appid:
 collections:
   projects:
     output: true
-    permalink: /:collection/:title/
+    permalink: /:collection/:title
 
 # Markdown settings
 markdown: kramdown
@@ -62,7 +62,7 @@ defaults:
   - scope:
       type: "posts"
     values:
-      show_ads: true
+      show_ads: false
       include_toc: true
 
 # Jekyll Compose default front matter
