@@ -1,6 +1,6 @@
 ---
 title: The Completely Frictionless Way to Let Guests Use Home Assistant
-tags: [home assistant, add-on, smart home]
+tags: [home assistant, add-on, smart home, visitors]
 description: Don't make guests download the home assistant app and use log in with guest credentials. Let this Add-On do all the hard work and just share a QR code.
 image: redirect_page.png
 modified: 2023-01-14
