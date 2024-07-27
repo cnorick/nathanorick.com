@@ -1,5 +1,5 @@
 ---
-title: "Detecting Visitors in Home Assistant by Counting Devices on the Guest Network"
+title: "Detecting Visitors with Home Assistant by Counting Devices on the Guest Network"
 tags:
  - home assistant
  - visitors
@@ -10,11 +10,11 @@ image: device-page.png
 published: true
 ---
 
-My Home Assistant instance has grow pretty complex over the years. Many of the automations that run regularly just aren't great for when people are visiting. I created a `Visitor Mode` `input_boolean` to turn off automations unfriendly to visitors, but up until now, it's been hard to remember to turn that on when someone comes over.
+My Home Assistant instance has grown pretty complex over the years. Many of the automations that run regularly are great when it's just my wife and me, but they are less than perfect when people are visiting. I created a `Visitor Mode` `input_boolean` to turn off automations unfriendly to visitors, but up until now, it's been hard to remember to turn that on when someone comes over.
 
-Now, my guests just have to join the WiFi network and Home Assistant can automatically turn on guest mode.
+Now, my guests just have to join the WiFi network and Home Assistant can automatically turn on `Visitor Mode`.
 
-**tldr;** I use a service on a Raspberry Pi to query my router to get a guest network device count. The service publishes the count to an MQTT topic that Home Assistant can read. Only guests use the guest network. All my devices are on a separate one.
+**tldr;** I created a custom service on a Raspberry Pi to query my router and get a count of devices connected to the guest network. The service publishes the count to an MQTT topic that Home Assistant can read, then Home Assistant can run automations based on that count. Only guests use the guest network. All my devices are on a separate one.
 
 ## Historical Solutions
 
