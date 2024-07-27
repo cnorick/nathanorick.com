@@ -24,6 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Update Packages
+        run: sudo apt update && sudo apt upgrade
+
       - name: Install image packages
         run: sudo apt install libvips libvips-dev 
 
