@@ -64,6 +64,12 @@ layout: default
         {% endif %}
       </div>
     </article>
+
+    <hr class="divider"/>
+
+    {% if page.reactions %}
+      {% include reactions.html %}
+    {% endif %}
   
     {% if page.comments %}
       {% include comments.html %}

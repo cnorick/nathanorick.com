@@ -10,6 +10,8 @@
   --gray: #{$gray};
   --white: #{$white};
   --background-color: #{$white};
+  --success: #{$success};
+  --success-text: #{$black};
 
   body[data-theme="dark"] {
     --text-base-color: #{$dark-text-base-color};
@@ -21,6 +23,8 @@
     --gray: #{$dark-gray};
     --white: #{$dark-white};
     --background-color: #{$dark-black};
+    --success: #{$dark-success};
+    --success-text: #{$black};
   }
 }
 

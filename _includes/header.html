@@ -16,6 +16,8 @@
   {%- endif -%}
 
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <script>function onConfettiLoad() { const confettiCanvas = document.getElementById("confetti"); window.pageConfetti = confetti.create(confettiCanvas, { resize: true }); }</script>
+  <script async defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" onload="onConfettiLoad()"></script>
 
   <script src="{{'/assets/js/main.js' | relative_url}}" defer="defer"></script>
   <meta charset="UTF-8" />

@@ -55,6 +55,7 @@ defaults:
       comments: true
       show_ads: false
       include_toc: false
+      reactions: true
   - scope:
       type: "projects"
     values:
