@@ -51,7 +51,7 @@ function onLoad() {
 
   ///////
 
-  const currentUrl = window.location.pathname;
+  const currentUrl = window.location.pathname?.replace(/\/+$/, "")
   const likeButton = document.getElementById("like-button");
   const clapButton = document.getElementById("clap-button");
   const likeCount = document.getElementById("like-count");
