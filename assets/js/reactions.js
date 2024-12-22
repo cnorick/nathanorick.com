@@ -1,6 +1,7 @@
 function onLoad() {
   const actionUrl =
     "https://script.google.com/macros/s/AKfycbyFPJNzE_zet1MitbaH-eoL5VW0LMK4uKIEAbFph02I1IcMmNl1vezS2Q_9Z59HUeDi/exec";
+  let user_ip = "";
 
   function postLike(article_url, action) {
     fetch(
@@ -10,6 +11,7 @@ function onLoad() {
           func: "add-like",
           action,
           article_url,
+          user_ip
         }),
       {
         method: "POST",
@@ -49,6 +51,14 @@ function onLoad() {
       });
   }
 
+  function getIp () {
+    fetch("https://api64.ipify.org?format=json")
+      .then((response) => response.json())
+      .then((data) => {
+        user_ip = data.ip;
+      });
+  }
+
   ///////
 
   const currentUrl = window.location.pathname?.replace(/\/+$/, "")
@@ -58,6 +68,7 @@ function onLoad() {
   const clapCount = document.getElementById("clap-count");
 
   getLikes(currentUrl);
+  getIp();
 
   likeButton.onclick = () => {
     const likeKey = `${currentUrl}-like`;
