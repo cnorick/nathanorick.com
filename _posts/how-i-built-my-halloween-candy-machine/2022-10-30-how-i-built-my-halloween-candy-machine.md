@@ -18,6 +18,12 @@ As we walked on Halloween night, one thing we kept seeing was folks sitting on t
 
 In this post, I'll break down the steps I took to create this machine. If you're interested in the details of how it works (it's super neat, btw!), read on. But if you like visuals better, **[skip to the gallery](#gallery)** to see a visual record of my progress.
 
+<div class="alert alert-primary">
+  <b>2025 Update</b>
+  <br/>
+  {% include post_link.html postId="/updated-halloween-candy-machine" %}
+</div>
+
 -----
 
 # Hardware
