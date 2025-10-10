@@ -87,7 +87,7 @@ Just for example, in 2024, we had 319 trick-or-treaters (lower than previous yea
 
 {% include picture.html relative_path="bucket-spinning.gif" alt="Turntable at the bottom of the bucket" %}
 
-Next, he hopper jumps into action, spinning the turntable in the bottom and dropping candy into the dropper. Every time the turntable moves, the dropper weighs how much candy is already in it and reports back to the controller.
+Next, the hopper jumps into action, spinning the turntable in the bottom and dropping candy into the dropper. Every time the turntable moves, the dropper weighs how much candy is already in it and reports back to the controller.
 
 - If the current weight is far from the target weight, the hopper spins faster
 - If it's close to the target weight, the hopper spins very slowly, dropping only a few pieces at a time
