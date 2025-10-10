@@ -63,3 +63,15 @@ Yeaaa feel free to open a pull request.
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+## How to Convert mp4s to gifs
+
+```bash
+ffmpeg -i in.mp4 -r 15 -vf scale=512:-1 out.gif
+```
+
+## How to remove image metadata
+
+```bash
+mogrify -strip ./*.jpg
+```
