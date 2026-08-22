@@ -29,17 +29,15 @@ jobs:
       - name: Install image packages
         run: sudo apt install libvips libvips-dev
 
-      - uses: actions/setup-ruby@v1
-      
-      - name: Install Gems
-        run: |
-          echo "Installing Gems"
-          bundle install
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
       
       - name: Build
         run: |
           echo "Building Jekyll Site"
-          jekyll build
+          bundle exec jekyll build
         env: 
           JEKYLL_ENV: production
       

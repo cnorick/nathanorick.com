@@ -30,17 +30,15 @@ jobs:
       - name: Install image packages
         run: sudo apt install libvips libvips-dev
         
-      - uses: actions/setup-ruby@v1
-      
-      - name: Install Gems
-        run: |
-          echo "Installing Gems"
-          bundle install
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+          bundler-cache: true
       
       - name: Build
         run: |
           echo "Building Jekyll Site"
-          jekyll build --drafts --future --unpublished --config _config.yml,_config.drafts.yml
+          bundle exec jekyll build --drafts --future --unpublished --config _config.yml,_config.drafts.yml
 
       - name: S3 Sync
         uses: jakejarvis/s3-sync-action@v0.5.1
