@@ -104,6 +104,8 @@ exclude:
   - lighthouse.png
   - klise-*.gem
   - klise.gemspec
+  - AGENTS.md
+  - CLAUDE.md
 
 plugins:
   - jekyll-feed
