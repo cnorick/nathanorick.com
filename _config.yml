@@ -106,6 +106,8 @@ exclude:
   - klise.gemspec
   - AGENTS.md
   - CLAUDE.md
+  - .agents
+  - _posts/halloween-candy-machine-2026/2026_SEASON_TECHNICAL_AND_PRODUCT_CHANGELOG.md
 
 plugins:
   - jekyll-feed
