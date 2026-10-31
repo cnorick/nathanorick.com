@@ -19,4 +19,5 @@ Click below to see a video of the machine in action, or to read more about how i
   <a href="https://www.youtube.com/shorts/fchGsu-fy-E">Video</a>
   <a href="{% post_url how-i-built-my-halloween-candy-machine/2022-10-30-how-i-built-my-halloween-candy-machine %}">Blog Post</a>
   <a href="{% post_url updated-halloween-candy-machine/2025-10-15-updated-halloween-candy-machine %}">2025 Update</a>
+  <a href="{% post_url halloween-candy-machine-2026/2026-10-31-halloween-candy-machine-2026 %}">2026 Update</a>
 </div>

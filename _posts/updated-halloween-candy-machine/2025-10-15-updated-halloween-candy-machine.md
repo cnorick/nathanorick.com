@@ -27,8 +27,11 @@ Since the last post, much of the machine has been redesigned. It now features a 
 <div class="alert alert-primary">
   <b>Note</b>
   <br/>
-  This is an update on the machine I originally posted about in 2022. You can read the original post to see what version 1.0 of the candy machine looked liked.
-  {% include post_link.html postId="/how-i-built-my-halloween-candy-machine" %}
+  This is an update on the machine I originally posted about in 2022. Check out the other posts in this series:
+  <ul>
+    <li><b>2022 Original Build:</b> {% include post_link.html postId="/how-i-built-my-halloween-candy-machine" %}</li>
+    <li><b>2026 Update:</b> {% include post_link.html postId="/halloween-candy-machine-2026" %}</li>
+  </ul>
 </div>
 
 -----
