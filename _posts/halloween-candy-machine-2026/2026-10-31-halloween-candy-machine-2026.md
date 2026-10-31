@@ -40,15 +40,17 @@ I also added a subwoofer inside the cabinet with a dedicated low-frequency hapti
 
 This is the new flagship game for 2026. It's a 4-slice potion wheel shaped like a giant piece of candy corn, surrounded by chasing marquee bulbs.
 
-{% include picture.html relative_path="candycorn_broken_motor_gag.gif" alt="Candy Corn Spinner breaking at the top and swinging down like a pendulum" %}
+{% include picture.html relative_path="candycorn_jackpot_thumb.png" alt="Candy Corn Spinner breaking at the top and swinging down like a pendulum" %}
 
 Because the prize weight is already weighed out before you press the button, the game knows ahead of time where the needle needs to land—which let me program in some fun fakeouts.
 
 My favorite is the **"Broken Motor" gag** when someone rolls the smallest prize (`xxxs`). The needle slowly crawls up toward the top jackpot as the suspense music peaks, freezes at the top for a split second, and then "breaks" with a loud metallic snap. The needle goes limp like an unpowered pendulum, swinging back and forth until it settles at the very bottom on the tiny prize while a crowd-groan sound effect plays:
 
-{% include picture.html relative_path="candycorn_jackpot.gif" alt="Candy Corn Spinner landing on the 100g jackpot" %}
+{% include picture.html relative_path="candycorn_broken_motor_gag.gif" alt="Candy Corn Spinner breaking at the top and swinging down like a pendulum" %}
 
 Even better: if you *actually* win the top jackpot, there's a 25% chance of a **double-fakeout**. It does the exact same broken-motor drop, swings all the way through the bottom, and carries just enough momentum up the other side to snap back into the jackpot slot at the top!
+
+{% include picture.html relative_path="candycorn_jackpot.gif" alt="Candy Corn Spinner landing on the 100g jackpot" %}
 
 ## Pumpkin Plinko
 
