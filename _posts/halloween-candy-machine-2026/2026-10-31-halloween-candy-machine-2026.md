@@ -6,13 +6,15 @@ tags:
   - python
   - home assistant
 description: Five years in, the Halloween candy machine now features five different games, a fog machine, a second screen for the line, Home Assistant operator dashboards, and Monte Carlo simulations.
-image: candycorn_jackpot_thumb.png
+image: new_sign_2026.jpg
 published: true
 ---
 
 We're now in year five of the Halloween candy machine! Every October, I think I'm just going to pull it out of storage, dust it off, and plug it in. And every October, I end up spending weeks adding completely unnecessary features to it.
 
 If you haven't seen the machine before, the short version is: a trick-or-treater walks up, hits a big glowing arcade button, plays a game on screen, and a weight-based hopper/dropper contraption inside dumps that exact amount of candy down a chute into their bucket.
+
+{% include picture.html relative_path="booth_setup_2026.jpg" alt="The 2026 candy machine booth under a tent covered in glowing green cobwebs" %}
 
 <div class="alert alert-primary">
   <b>Previous Updates</b>
@@ -26,7 +28,13 @@ If you haven't seen the machine before, the short version is: a trick-or-treater
 
 In past years, the machine only had one game (a classic spinning wheel), the crowd waiting in the driveway couldn't see what was happening up at the booth, and I still had to hover nearby in case the candy jammed or ran low. This year, I went all-in on turning the whole porch into an arcade and making the machine smart enough to run itself.
 
-Here are the highlights of what's new for 2026.
+I also got some awesome help with the art this year! Huge shoutout to [Sarah Nelson](https://www.facebook.com/share/1C9isFQJfH/?mibextid=wwXIfr) for building our new physical "Spin to Win" sign above the machine—it looks so much cleaner than my old hand-painted cardboard sign from 2022:
+
+{% include picture.html relative_path="new_sign_2026.jpg" alt="Close-up of the candy machine featuring the new Happy Halloween Spin to Win sign built by Sarah Nelson" %}
+
+And another huge shoutout to my good friend [Jacob Allen](https://www.linkedin.com/in/jacobscottallen) for designing the new Candy Corn Spinner! It's so much easier to understand at a glance compared to our old legacy spinner, which was way too complicated to read quickly while the wheel was spinning.
+
+Here are the highlights of what else is new for 2026.
 
 -----
 
@@ -38,7 +46,7 @@ I also added a subwoofer inside the cabinet with a dedicated low-frequency hapti
 
 ## Candy Corn Spinner
 
-This is the new flagship game for 2026. It's a 4-slice potion wheel shaped like a giant piece of candy corn, surrounded by chasing marquee bulbs.
+This is the new flagship game for 2026 that Jacob designed. It's a 4-slice potion wheel shaped like a giant piece of candy corn, surrounded by chasing marquee bulbs.
 
 {% include picture.html relative_path="candycorn_jackpot_thumb.png" alt="Candy Corn Spinner breaking at the top and swinging down like a pendulum" %}
 
@@ -82,7 +90,9 @@ And of course, I kept the original 360-degree spinning wheel around for nostalgi
 
 As I mentioned in my {% include post_link.html postId="/updated-halloween-candy-machine" %}, our line gets *long* on Halloween night. The problem is that when you're standing 20 feet back in the driveway, you can't see the screen on the machine to know what people are winning.
 
-To fix that, I dug up an old 5th-gen Amazon Fire 7 tablet I had laying around and mounted it facing the line. Because that tablet is ancient, I wrote a lightweight web app in plain old ES5 Javascript and CSS that connects to the main Raspberry Pi over Server-Sent Events (SSE).
+To fix that, I dug up an old 5th-gen Amazon Fire 7 tablet I had laying around and enlisted a plastic skeleton along the walkway railing to hold it up facing the line. Because that tablet is ancient, I wrote a lightweight web app in plain old ES5 Javascript and CSS that connects to the main Raspberry Pi over Server-Sent Events (SSE).
+
+{% include picture.html relative_path="skeleton_line_tablet.jpg" alt="A plastic skeleton standing by the walkway steps holding up the Amazon Fire 7 tablet displaying a QR code for the line" %}
 
 While people wait in line, the tablet cycles through:
 - **Live stats**: Total pounds of candy dispensed so far and total trick-or-treaters served.
@@ -107,7 +117,9 @@ This year I hooked a ground fog machine (with a chiller so the fog stays low to 
 
 # 4. Operationalizing with Home Assistant
 
-In previous years, I had to babysit the machine pretty closely. If fun-size candy bars formed a bridge inside the bucket, or if the hopper ran completely dry, I wouldn't know until a kid pressed the button and nothing came out.
+In previous years, I had to babysit the machine pretty closely from a camp chair behind the curtain. If fun-size candy bars formed a bridge inside the bucket, or if the hopper ran completely dry, I wouldn't know until a kid pressed the button and nothing came out.
+
+{% include picture.html relative_path="behind_the_curtain_2026.jpg" alt="Behind the curtain inside the candy machine tent showing the blue hopper bucket, wooden frame, electronics, and an empty camp chair" %}
 
 This year, I exposed the whole machine to **Home Assistant over MQTT** (using MQTT auto-discovery) and built a dedicated "Candy Booth" operations dashboard for my phone.
 
