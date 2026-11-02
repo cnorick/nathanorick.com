@@ -1,0 +1,283 @@
+---
+title: "The 668-Spin Candy Dispenser Recap (Halloween 2026)"
+description: "Night recap and telemetry analysis of the 668 physical spins and 76.85 lbs of candy dispensed during Halloween 2026."
+image: "booth_setup_2026.jpg"
+tags:
+  - hardware
+  - python
+  - home assistant
+  - game
+layout: default
+full_width: true
+---
+
+<link rel="stylesheet" href="{{ page.url }}recap.css" />
+
+  <div id="tooltip" class="chart-tooltip" role="status" aria-live="polite"></div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-badge">🎃 Halloween Night 2026 · Official Machine Telemetry</div>
+      <h1>The 668-Spin Candy Dispenser Recap</h1>
+      <p class="hero-subtitle">
+        Every button press, load-cell gram measurement, auger prep cycle, and arcade reveal from our automated Halloween candy machine on October 31, 2026. Over four hours of nonstop trick-or-treating, the machine metered and dropped <strong>76.85 pounds</strong> of candy across a record-breaking <strong>668 physical spins</strong>. For the full hardware, arcade game modes, and firmware breakdown, check out the <a href="{{ '/halloween-candy-machine-2026/' | relative_url }}" style="color:var(--accent-amber); font-weight:600; text-decoration:underline;">2026 Arcade Candy Machine update</a>.
+      </p>
+      <div class="hero-meta">
+        <span>📅 <strong>Date:</strong> Saturday, Oct 31, 2026</span>
+        <span>🕔 <strong>First Spin:</strong> 4:59:37 PM</span>
+        <span>🕘 <strong>Final Spin:</strong> 9:02:30 PM</span>
+        <span>⚡ <strong>Architecture:</strong> Raspberry Pi 4 + Dual ESP32 + HX711 Scale</span>
+        <span>💾 <a href="{{ page.url }}2026-halloween.csv" download="2026-halloween.csv" style="color:var(--accent-amber); font-weight:700; text-decoration:none;">Download CSV (73 KB)</a></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Headline KPIs -->
+    <section class="kpi-grid" aria-label="Headline Statistics">
+      <div class="kpi-card" style="--kpi-color: var(--accent-orange);">
+        <div class="kpi-label">Total Physical Spins</div>
+        <div class="kpi-value">668</div>
+        <div class="kpi-sub">New all-time record · <strong>165.0 spins/hr</strong> avg</div>
+      </div>
+      <div class="kpi-card" style="--kpi-color: var(--accent-amber);">
+        <div class="kpi-label">Total Candy Dispensed</div>
+        <div class="kpi-value">76.85 <span style="font-size:1.15rem">lbs</span></div>
+        <div class="kpi-sub"><strong>34,857g</strong> actual vs. 76.28 lbs target</div>
+      </div>
+      <div class="kpi-card" style="--kpi-color: var(--accent-green);">
+        <div class="kpi-label">Scale Metering Accuracy</div>
+        <div class="kpi-value">100.7%</div>
+        <div class="kpi-sub"><strong>52.2g</strong> avg/spin vs. 51.8g target</div>
+      </div>
+      <div class="kpi-card" style="--kpi-color: var(--accent-purple);">
+        <div class="kpi-label">Median Turnaround</div>
+        <div class="kpi-value">18.1s</div>
+        <div class="kpi-sub"><strong>88.6%</strong> of spins back-to-back (&lt;25s)</div>
+      </div>
+      <div class="kpi-card" style="--kpi-color: var(--accent-cyan);">
+        <div class="kpi-label">Instant Zero-Wait Drops</div>
+        <div class="kpi-value">91.2%</div>
+        <div class="kpi-sub"><strong>609 / 668</strong> pre-weighed before button press</div>
+      </div>
+    </section>
+
+    <!-- Chart 1: Chronological Timeline -->
+    <section class="section-card">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">📈 Crowd Flow &amp; Candy Burn Throughout the Night</h2>
+          <p class="section-desc">
+            After a light trickle between 5:00 and 5:35 PM, a continuous line locked in at <strong>5:40 PM</strong> and ran at the machine's mechanical limit (180–228 spins/hour) for three straight hours. Hover any bar or point to inspect that time slice.
+          </p>
+        </div>
+        <div class="control-group">
+          <button class="pill-btn active" data-bucket="15" onclick="setTimelineBucket(15)">15-Min Intervals</button>
+          <button class="pill-btn" data-bucket="5" onclick="setTimelineBucket(5)">5-Min High-Res</button>
+          <span style="color:var(--text-dim)">|</span>
+          <button class="pill-btn active" data-mode="spins" onclick="setTimelineMode('spins')">Spins &amp; Overrides</button>
+          <button class="pill-btn" data-mode="lbs" onclick="setTimelineMode('lbs')">Cumulative Candy (lbs)</button>
+        </div>
+      </div>
+
+      <div class="chart-stage">
+        <svg id="timeline-svg" class="chart-svg" viewBox="0 0 1100 370" role="img" aria-label="Timeline chart of spins and candy dispensed over the evening"></svg>
+        <div id="timeline-legend" class="chart-legend"></div>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-card">
+          <div class="story-time">4:59 PM – 5:35 PM · Spins #1–34</div>
+          <h4>Early Trickle &amp; Hopper Top-Off</h4>
+          <p>Only 28 spins occurred before 5:30 PM with 3–6 minute gaps between groups. Early full-hopper head pressure caused brief auger bridging until running the hopper half-full smoothed out the flow.</p>
+        </div>
+        <div class="story-card">
+          <div class="story-time">5:40 PM – 8:25 PM · Spins #35–560</div>
+          <h4>The 3-Hour Nonstop Rush</h4>
+          <p>With a friend stationed next to the machine coaching trick-or-treaters and keeping the queue moving, the dispenser fired every ~18 seconds for nearly 3 hours without a single 60-second idle pause.</p>
+        </div>
+        <div class="story-card">
+          <div class="story-time">6:45 PM · Spin #233</div>
+          <h4>Shifting into Aggressive Gear</h4>
+          <p>Having conserved candy early on the balanced profile (20.5 lbs across the first 233 spins), the machine switched to the heavy-hitting <strong>Aggressive</strong> profile to hand out bigger fistfuls of candy.</p>
+        </div>
+        <div class="story-card">
+          <div class="story-time">8:25 PM – 9:02 PM · Spins #561–668</div>
+          <h4>Jackpot Frenzy &amp; Bonus Pours</h4>
+          <p>To make sure no candy was left behind, we triggered 42 manual XXL/XL jackpots and hand-poured bonus candy directly into the weighing bucket—finishing on Spin #668 as the hopper ran dry at 8.4g!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chart 2: Every Single Spin Scatter Explorer -->
+    <section class="section-card">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🎯 All 668 Spins: Gram-by-Gram Scatter Explorer</h2>
+          <p class="section-desc">
+            Every dot below is a real trick-or-treater's spin plotted by time of night and actual measured candy weight (in grams). Filter or color-code by prize tier, game mechanism, or manual jackpot override.
+          </p>
+        </div>
+        <div class="control-group">
+          <button class="pill-btn active" data-scolor="tier" onclick="setScatterColor('tier')">Color by Prize Tier</button>
+          <button class="pill-btn" data-scolor="manual" onclick="setScatterColor('manual')">Random vs. Manual Override</button>
+          <button class="pill-btn" data-scolor="mech" onclick="setScatterColor('mech')">Color by Game Mechanism</button>
+        </div>
+      </div>
+
+      <div class="chart-stage">
+        <svg id="scatter-svg" class="chart-svg" viewBox="0 0 1100 400" role="img" aria-label="Scatter plot of all 668 spins showing actual candy weight in grams across the evening"></svg>
+        <div id="scatter-legend" class="chart-legend"></div>
+      </div>
+    </section>
+
+    <!-- Two Column: Prize Tier Distribution + Two-Stage Buffer & Mechanisms -->
+    <div class="grid-2col">
+      <section class="section-card" style="margin-bottom: 0;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">🍬 Prize Tier Breakdown</h2>
+            <p class="section-desc">
+              8 prize tiers from the <strong>10g XXXS</strong> pendulum fake-out gag up to the <strong>100g XXL</strong> jackpot. Striped bar segments show operator-triggered manual overrides.
+            </p>
+          </div>
+        </div>
+        <div id="tier-list" class="tier-list"></div>
+      </section>
+
+      <section class="section-card" style="margin-bottom: 0;">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">⚙️ Machine Speed &amp; Game Modes</h2>
+            <p class="section-desc">
+              How the two-stage pre-weighed buffer kept the line moving at 18.1s median turnaround, plus popularity across the four arcade reveal games.
+            </p>
+          </div>
+        </div>
+        <div id="pacing-panel"></div>
+      </section>
+    </div>
+
+    <!-- Fun Highlights & Records -->
+    <section class="section-card">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">🏆 Night Highlights &amp; Quirky Telemetry Records</h2>
+          <p class="section-desc"> Memorable moments captured in the load-cell and timing logs from Halloween 2026.</p>
+        </div>
+      </div>
+      <div class="fun-grid">
+        <div class="fun-card">
+          <div class="fun-icon">🏔️</div>
+          <div class="fun-stat">207.5 grams</div>
+          <div class="fun-title">Biggest Single Candy Dump</div>
+          <p class="fun-desc">Spin <strong>#652</strong> at 8:54:47 PM dropped nearly half a pound (0.46 lbs) of candy in a single chute release during the late-night hand-pour bonus round.</p>
+        </div>
+        <div class="fun-card">
+          <div class="fun-icon">⚡</div>
+          <div class="fun-stat">19 Spins / 5 Min</div>
+          <div class="fun-title">Fastest 5-Minute Blitz</div>
+          <p class="fun-desc">Between <strong>7:40 and 7:45 PM</strong>, the machine hit a <strong>228 spins/hour</strong> pace—serving a new trick-or-treater every 15.8 seconds with a max idle wait of 8.8s.</p>
+        </div>
+        <div class="fun-card">
+          <div class="fun-icon">🔥</div>
+          <div class="fun-stat">526 Spins in a Row</div>
+          <div class="fun-title">Longest Continuous Line</div>
+          <p class="fun-desc">From <strong>5:35 PM to 8:55 PM</strong> (3 hours and 20 minutes), the idle gap between players never once exceeded 42 seconds.</p>
+        </div>
+        <div class="fun-card">
+          <div class="fun-icon">😈</div>
+          <div class="fun-stat">3x XXXS Streak</div>
+          <div class="fun-title">Triple Pendulum Fake-Out</div>
+          <p class="fun-desc">At <strong>6:06–6:07 PM</strong> (Spins <strong>#121, #122, #123</strong>), three trick-or-treaters in a row hit the 0.08-probability 10g XXXS machine-break gag reveal!</p>
+        </div>
+        <div class="fun-card">
+          <div class="fun-icon">🎯</div>
+          <div class="fun-stat">0.01g Delta</div>
+          <div class="fun-title">Most Precise Scale Pour</div>
+          <p class="fun-desc">Spin <strong>#438</strong> at 8:01:30 PM (Tarot Card XS) targeted 30.00g and dispensed <strong>30.0103g</strong>—an error of just one-hundredth of a gram.</p>
+        </div>
+        <div class="fun-card">
+          <div class="fun-icon">🏁</div>
+          <div class="fun-stat">8.4g Final Drop</div>
+          <div class="fun-title">Empty Hopper at the Buzzer</div>
+          <p class="fun-desc">On Spin <strong>#668</strong> at 9:02:30 PM, the auger spun for 16.0s and scraped out the final <strong>8.4 grams</strong> of candy, ending the night with an empty hopper.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full Interactive Spin Log Table -->
+    <section class="section-card">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">📋 Complete 668-Spin Telemetry Explorer</h2>
+          <p class="section-desc">
+            Search, filter, and inspect every spin from the evening. On smaller screens, rows automatically adapt into readable cards.
+          </p>
+        </div>
+      </div>
+
+      <div class="table-controls">
+        <div class="control-group">
+          <input type="search" id="search-input" class="filter-input" placeholder="Search spin # or time (e.g. #652, 7:40)..." oninput="renderTable()" aria-label="Search spin number or timestamp" />
+          <select id="tier-filter" class="filter-select" onchange="renderTable()" aria-label="Filter by prize tier">
+            <option value="all">All Prize Tiers (668)</option>
+            <option value="xxl">XXL — 100g (96)</option>
+            <option value="xl">XL — 70g (64)</option>
+            <option value="lg">LG — 60g (97)</option>
+            <option value="md">MD — 50g (123)</option>
+            <option value="sm">SM — 40g (106)</option>
+            <option value="xs">XS — 30g (90)</option>
+            <option value="xxs">XXS — 20g (69)</option>
+            <option value="xxxs">XXXS — 10g Gag (23)</option>
+          </select>
+          <select id="mech-filter" class="filter-select" onchange="renderTable()" aria-label="Filter by reveal mechanism">
+            <option value="all">All Games (668)</option>
+            <option value="candycorn">Candy Corn Spinner (602)</option>
+            <option value="tarot">Tarot Cards (37)</option>
+            <option value="slots">Slot Machine (15)</option>
+            <option value="plinko">Plinko (14)</option>
+          </select>
+          <select id="mode-filter" class="filter-select" onchange="renderTable()" aria-label="Filter by spin mode">
+            <option value="all">Auto + Manual (668)</option>
+            <option value="auto">Random Auto Only (589)</option>
+            <option value="manual">Manual Overrides Only (79)</option>
+          </select>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.85rem; flex-wrap:wrap;">
+          <div id="table-count" class="mono" style="font-size: 0.84rem; color: var(--text-muted);"></div>
+          <a href="{{ page.url }}2026-halloween.csv" download="2026-halloween.csv" class="download-btn" title="Download raw spin data as CSV">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download CSV</span>
+          </a>
+        </div>
+      </div>
+
+      <div tabindex="0" role="region" aria-labelledby="spin-log-caption" class="table-wrapper">
+        <table>
+          <caption id="spin-log-caption">Halloween 2026 physical spin telemetry log (sorted by spin number)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Spin #</th>
+              <th scope="col">Time</th>
+              <th scope="col">Prize Tier</th>
+              <th scope="col">Actual Wt</th>
+              <th scope="col">Target Wt</th>
+              <th scope="col">Delta</th>
+              <th scope="col">Prep / Dump</th>
+              <th scope="col">Idle Wait</th>
+              <th scope="col">Game</th>
+              <th scope="col">Trigger</th>
+            </tr>
+          </thead>
+          <tbody id="spin-table-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div class="recap-footer container">
+    Built from live HX711 load-cell &amp; pygame event telemetry · Halloween Candy Dispenser 2026
+  </div>
+
+<script src="{{ page.url }}recap.js" defer></script>

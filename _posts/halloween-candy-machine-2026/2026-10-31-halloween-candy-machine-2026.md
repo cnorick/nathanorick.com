@@ -17,12 +17,13 @@ If you haven't seen the machine before, the short version is: a trick-or-treater
 {% include picture.html relative_path="booth_setup_2026.jpg" alt="The 2026 candy machine booth under a tent covered in glowing green cobwebs" %}
 
 <div class="alert alert-primary">
-  <b>Previous Updates</b>
+  <b>Candy Machine Series & Updates</b>
   <br/>
-  This is the third post in the candy machine series. Check out the older posts to see how it started and how the internals work:
+  This post covers the 2026 pre-Halloween build and feature upgrades. Check out the rest of the series:
   <ul>
-    <li>{% include post_link.html postId="/how-i-built-my-halloween-candy-machine" %} (2022)</li>
-    <li>{% include post_link.html postId="/updated-halloween-candy-machine" %} (2025)</li>
+    <li>{% include post_link.html postId="/how-i-built-my-halloween-candy-machine" %} (2022 Original Build)</li>
+    <li>{% include post_link.html postId="/updated-halloween-candy-machine" %} (2025 Internal Redesign)</li>
+    <li>{% include post_link.html postId="/halloween-2026-recap" %} (2026 Halloween Night Telemetry & Data Analysis)</li>
   </ul>
 </div>
 
@@ -158,6 +159,8 @@ Coming out of those experiments, I completely rewrote the hopper firmware:
 
 Between the tournament tuning and the new metering zones, our dispensing accuracy (landing within ±5g of the target) jumped from **~72% last year to 96.8% this year**.
 
+*(Update: Want to see how it held up in practice? Check out {% include post_link.html postId="/halloween-2026-recap" %} for our full interactive Halloween night telemetry dashboard, covering all 668 spins and 76+ lbs of candy dropped!)*
+
 -----
 
 # Bonus: A Full Virtual Cabinet Simulator
@@ -168,5 +171,6 @@ One last quality-of-life upgrade for myself: testing code changes used to mean h
 
 As always, all the code, Home Assistant configs, and simulation scripts are open source:
 - [Code on GitHub](https://github.com/cnorick/halloween_dispenser_public)
+- {% include post_link.html postId="/halloween-2026-recap" %} (Halloween Night 2026 Telemetry & Data Recap)
 - {% include post_link.html postId="/how-i-built-my-halloween-candy-machine" %} (2022 Original Build)
 - {% include post_link.html postId="/updated-halloween-candy-machine" %} (2025 Internal Redesign)
