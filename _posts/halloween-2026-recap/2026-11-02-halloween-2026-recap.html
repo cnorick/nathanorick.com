@@ -9,8 +9,13 @@ tags:
   - game
 layout: default
 full_width: true
+force_theme: dark
 ---
 
+<script>
+  document.body.setAttribute("data-theme", "dark");
+  document.body.setAttribute("data-force-theme", "dark");
+</script>
 <link rel="stylesheet" href="{{ page.url }}recap.css" />
 
   <div id="tooltip" class="chart-tooltip" role="status" aria-live="polite"></div>
@@ -46,9 +51,9 @@ full_width: true
         <div class="kpi-sub"><strong>34,857g</strong> actual vs. 76.28 lbs target</div>
       </div>
       <div class="kpi-card" style="--kpi-color: var(--accent-green);">
-        <div class="kpi-label">Scale Metering Accuracy</div>
+        <div class="kpi-label">Target Weight Delivery</div>
         <div class="kpi-value">100.7%</div>
-        <div class="kpi-sub"><strong>52.2g</strong> avg/spin vs. 51.8g target</div>
+        <div class="kpi-sub"><strong>52.2g</strong> avg/spin vs. 51.8g target (+0.7% net)</div>
       </div>
       <div class="kpi-card" style="--kpi-color: var(--accent-purple);">
         <div class="kpi-label">Median Turnaround</div>

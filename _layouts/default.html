@@ -5,7 +5,7 @@ layout: compress
 <html lang="{{ page.lang | default: site.lang | default: " en " }}">
 {% include header.html %}
 
-<body data-theme="{{ site.mode }}" class="notransition">
+<body data-theme="{{ page.force_theme | default: site.mode }}" class="notransition" {% if page.force_theme %}data-force-theme="{{ page.force_theme }}"{% endif %}>
   <canvas id="confetti" class="confetti"></canvas>
   <div class="top-container {% if page.full_width -%} full-width {%- endif -%}">
     {% include navbar.html %}
